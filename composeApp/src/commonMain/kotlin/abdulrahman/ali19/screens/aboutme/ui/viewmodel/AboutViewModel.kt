@@ -3,8 +3,9 @@ package abdulrahman.ali19.screens.aboutme.ui.viewmodel
 import abdulrahman.ali19.core.BaseViewModel
 import abdulrahman.ali19.screens.aboutme.copyToClipboard
 import abdulrahman.ali19.screens.aboutme.domain.model.ContactInformationType
-import abdulrahman.ali19.screens.aboutme.domain.usecase.GetContactsUsecase
-import abdulrahman.ali19.screens.aboutme.domain.usecase.GetPersonalInformationUsecase
+import abdulrahman.ali19.screens.aboutme.domain.usecase.GetContactsUseCase
+import abdulrahman.ali19.screens.aboutme.domain.usecase.GetEducationUseCase
+import abdulrahman.ali19.screens.aboutme.domain.usecase.GetPersonalInformationUseCase
 import abdulrahman.ali19.screens.aboutme.openDialer
 import abdulrahman.ali19.screens.aboutme.openEmailClient
 import abdulrahman.ali19.screens.aboutme.openNewWindow
@@ -17,17 +18,21 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class AboutViewModel(
-    private val getPersonalInformationUsecase: GetPersonalInformationUsecase,
-    private val getContactsUsecase: GetContactsUsecase
+    private val getPersonalInformationUseCase: GetPersonalInformationUseCase,
+    private val getContactsUseCase: GetContactsUseCase,
+    private val getEducationUseCase: GetEducationUseCase,
 ) : BaseViewModel<AboutScreenState, AboutEvents>(initialState = AboutScreenState()) {
 
     init {
         viewModelScope.launch {
-            val personalInformationEntity = getPersonalInformationUsecase()
+            val personalInformationEntity = getPersonalInformationUseCase()
             _state.update { it.copy(personalInformationState = personalInformationEntity.toState()) }
 
-            val contactsEntity = getContactsUsecase()
+            val contactsEntity = getContactsUseCase()
             _state.update { it.copy(contacts = contactsEntity.toState()) }
+
+            val educationEntity = getEducationUseCase()
+            _state.update { it.copy(education = educationEntity.toState()) }
         }
     }
 

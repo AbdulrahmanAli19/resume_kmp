@@ -3,7 +3,7 @@ package abdulrahman.ali19.screens.aboutme.domain.usecase
 import abdulrahman.ali19.screens.aboutme.domain.model.PersonalInformationEntity
 import abdulrahman.ali19.screens.aboutme.domain.repo.AboutMeRepo
 
-class GetPersonalInformationUsecase(
+class GetPersonalInformationUseCase(
     private val repo: AboutMeRepo
 ) {
     suspend operator fun invoke(): PersonalInformationEntity {
