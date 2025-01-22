@@ -1,0 +1,59 @@
+{
+  "experience": [
+    {
+      "title": "Associate Software Engineer",
+      "company": "Fawry",
+      "start_date": "December 2023",
+      "end_date": "Current​",
+      "info": "Contributing to an application supporting 16 banks across Egypt.​",
+      "eesponsibilities": [
+        "Identify, analyze, and resolve software issues in production",
+        "Refactor code, and optimize Performance.",
+        "Address security vulnerabilities using tools like DexGuard.",
+        "Develop and implement new features to meet business requirements.",
+        "Ensure application reliability and scalability using Java and Kotlin."
+      ],
+      "projects": [
+        {
+          "name": "NBE-PhoneCash",
+          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet"
+        },
+        {
+          "name": "BM Wallet",
+          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet.bm"
+        },
+        {
+          "name": "QNB Egypt E-Wallet",
+          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet.qnb"
+        }
+      ]
+    },
+    {
+      "title": "Native Android Developer",
+      "company": "Quantum Promoting Network",
+      "start_date": "November 2022",
+      "end_date": "December 2023​",
+      "info": "",
+      "eesponsibilities": [
+        "Troubleshoot, debug and upgrade existing software.",
+        "Adding new features to existing software.",
+        "Produce clean, efficient code based on specifications.",
+        "Collaborating with other developers and stakeholders to ensure the app meets business requirements."
+      ],
+      "projects": [
+        {
+          "name": "Kashkom",
+          "url": "https://play.google.com/store/apps/details?id=com.qpn.kamashka"
+        },
+        {
+          "name": "Kamashka-Delivery",
+          "url": ""
+        },
+        {
+          "name": "Eventy",
+          "url": ""
+        }
+      ]
+    }
+  ]
+}

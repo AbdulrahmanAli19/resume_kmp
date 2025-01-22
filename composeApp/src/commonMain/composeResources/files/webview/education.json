@@ -1,0 +1,35 @@
+{
+  "education": [
+    {
+      "name": "Information Technology Institute (ITI)",
+      "start_date": "October 2021",
+      "end_date": "July 2022",
+      "location": "Suez Canal University, Ismailia, Egypt",
+      "info": "I learned more about mobile app development and gained valuable knowledge and skills during the 9-month diploma program.",
+      "department": "9-month Diploma in Native Mobile Development",
+      "activities": []
+    },
+    {
+      "name": "New Cairo Academy",
+      "start_date": "September 2017",
+      "end_date": "July 2021",
+      "location": "Cairo, Egypt",
+      "info": "",
+      "department": "Bachelor's degree in Computer Science and Management Information Systems (MIS)",
+      "activities": [
+        {
+          "title": "Flutter Developer",
+          "name": "Enactus NC, Cairo, Egypt",
+          "start_date": "February 2020",
+          "end_date": "April 2021"
+        },
+        {
+          "title": "Teaching Assistant",
+          "name": "Bdaya Team, Cairo, Egypt",
+          "start_date": "April 2019",
+          "end_date": "July 2019"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "technical_skills": [
+    "Android (Kotlin - Java)",
+    "KMP",
+    "Kotlin coroutines",
+    "RX Java",
+    "RDBMS / SQLite",
+    "ORM / Room",
+    "Android Jetpack",
+    "Jetpack Compose",
+    "XML Views",
+    "Dependency Injection (Hilt / Koin)",
+    "Firebase (Crashlytics, App distribution)",
+    "RESTful API’s (Retrofit, Ktor)",
+    "Unit Testing",
+    "Memory Management",
+    "Dexguard, RASP"
+  ],
+  "software_engineering": [
+    "Object-Oriented Programming (OOP)",
+    "SOLID",
+    "Clean architecture",
+    "Data Structure & Algorithms",
+    "Design Patterns",
+    "Architecture Pattern (MVI, MVVM, MVP, MVC)",
+    "Version Control (Git, Git-Hub & Git-lab)",
+    "Agile Methodologies"
+  ],
+  "soft_skills": [
+    "Problem-solving",
+    "Teamwork",
+    "Adaptability",
+    "Continuous learning"
+  ]
+}

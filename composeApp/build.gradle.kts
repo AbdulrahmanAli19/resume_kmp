@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -9,6 +8,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinxSerialization)
 }
 
 kotlin {
@@ -55,7 +55,16 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
         }
+
+        jsMain.dependencies {
+            implementation(libs.web.core.js)
+            implementation(libs.kotlinx.html.js)
+            implementation(compose.html.core)
+        }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -70,6 +79,17 @@ kotlin {
             implementation(libs.coil.compose)
             implementation(libs.coil.mp)
             implementation(libs.coil.network.ktor)
+            implementation(libs.coil.svg)
+            implementation(libs.napier.logger)
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.composeVM)
+            implementation(libs.ktor.serialization.kotlinx.json)
+
+        }
+
+        appleMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 }

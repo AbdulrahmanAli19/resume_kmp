@@ -1,0 +1,50 @@
+{
+  "contacts": [
+    {
+      "type": "address",
+      "value": "Cairo, Egypt",
+      "is_copyable": false,
+      "is_clickable": false,
+      "icon": "drawable/location.svg",
+      "action": "non"
+    },
+    {
+      "type": "email",
+      "value": "Abdulrahman.ali19@outlook.com",
+      "url": "Abdulrahman.ali19@outlook.com",
+      "icon": "drawable/email.svg",
+      "is_copyable": true,
+      "is_clickable": true,
+      "action": "send_mail"
+    },
+    {
+      "type": "phone_number",
+      "url": "+20 111 772 1727",
+      "value": "+20 111 772 1727",
+      "icon": "drawable/call.png",
+      "is_copyable": true,
+      "is_clickable": true,
+      "action": "call"
+    },
+    {
+      "type": "linkedin",
+      "url": "https://www.linkedin.com/in/abdulrahmanali19/",
+      "value": "Linkedin: AbdulrahmanAli19",
+      "user_name": "AbdulrahmanAli19",
+      "icon": "drawable/linkedin.svg",
+      "is_copyable": true,
+      "is_clickable": true,
+      "action": "web_page"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/AbdulrahmanAli19",
+      "value": "Github: AbdulrahmanAli19",
+      "user_name": "AbdulrahmanAli19",
+      "icon": "drawable/github.svg",
+      "is_copyable": true,
+      "is_clickable": true,
+      "action": "web_page"
+    }
+  ]
+}
