@@ -9,7 +9,7 @@ import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.ContactsState
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.EducationState
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.PersonalInformationState
 
-fun PersonalInformationEntity.toState(): PersonalInformationState {
+fun PersonalInformationEntity.toPersonalInformationState(): PersonalInformationState {
     return PersonalInformationState(
         name = "${this.name}",
         title = "${this.title}",
@@ -19,7 +19,7 @@ fun PersonalInformationEntity.toState(): PersonalInformationState {
     )
 }
 
-fun List<ContactInformationEntity>.toState(): List<ContactsState> {
+fun List<ContactInformationEntity>.toContactsState(): List<ContactsState> {
     return this.map {
         ContactsState(
             type = it.type ?: ContactInformationType.NON,
@@ -32,7 +32,7 @@ fun List<ContactInformationEntity>.toState(): List<ContactsState> {
     }
 }
 
-fun List<EducationEntity>.toState(): List<EducationState> {
+fun List<EducationEntity>.toEducationState(): List<EducationState> {
     return this.map {
         EducationState(
             name = it.name,

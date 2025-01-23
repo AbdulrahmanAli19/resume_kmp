@@ -24,5 +24,5 @@ data class Activity(
     val title: String,
     val name: String,
     @SerialName("start_date") val startDate: String,
-    val endDate: String
+    @SerialName("end_date") val endDate: String
 )

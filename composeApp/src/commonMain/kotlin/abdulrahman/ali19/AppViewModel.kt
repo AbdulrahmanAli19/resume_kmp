@@ -11,7 +11,7 @@ class AppViewModel : BaseViewModel<AppState, AppEvents>(AppState(isMobile = true
                 it.copy(
                     isMobile = event.isMobile,
                     horizontalPadding = if (!event.isMobile) 120 else 16,
-                    verticalPadding = if (!event.isMobile) 60 else 7
+                    verticalPadding = if (!event.isMobile) 60 else 7,
                 )
             }
         }

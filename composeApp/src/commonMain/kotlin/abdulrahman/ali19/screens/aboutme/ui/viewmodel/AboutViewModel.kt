@@ -26,13 +26,13 @@ class AboutViewModel(
     init {
         viewModelScope.launch {
             val personalInformationEntity = getPersonalInformationUseCase()
-            _state.update { it.copy(personalInformationState = personalInformationEntity.toState()) }
+            _state.update { it.copy(personalInformationState = personalInformationEntity.toPersonalInformationState()) }
 
             val contactsEntity = getContactsUseCase()
-            _state.update { it.copy(contacts = contactsEntity.toState()) }
+            _state.update { it.copy(contacts = contactsEntity.toContactsState()) }
 
             val educationEntity = getEducationUseCase()
-            _state.update { it.copy(education = educationEntity.toState()) }
+            _state.update { it.copy(education = educationEntity.toEducationState()) }
         }
     }
 
