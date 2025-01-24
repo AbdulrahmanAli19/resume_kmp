@@ -1,4 +1,4 @@
-package abdulrahman.ali19.screens.aboutme.domain.model
+package abdulrahman.ali19.screens.education.domain.entity
 
 data class EducationEntity(
     val name: String,

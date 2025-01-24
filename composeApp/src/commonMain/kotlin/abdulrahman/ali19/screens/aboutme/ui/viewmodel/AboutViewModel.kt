@@ -4,7 +4,6 @@ import abdulrahman.ali19.core.BaseViewModel
 import abdulrahman.ali19.screens.aboutme.copyToClipboard
 import abdulrahman.ali19.screens.aboutme.domain.model.ContactInformationType
 import abdulrahman.ali19.screens.aboutme.domain.usecase.GetContactsUseCase
-import abdulrahman.ali19.screens.aboutme.domain.usecase.GetEducationUseCase
 import abdulrahman.ali19.screens.aboutme.domain.usecase.GetPersonalInformationUseCase
 import abdulrahman.ali19.screens.aboutme.openDialer
 import abdulrahman.ali19.screens.aboutme.openEmailClient
@@ -20,7 +19,6 @@ import kotlinx.coroutines.launch
 class AboutViewModel(
     private val getPersonalInformationUseCase: GetPersonalInformationUseCase,
     private val getContactsUseCase: GetContactsUseCase,
-    private val getEducationUseCase: GetEducationUseCase,
 ) : BaseViewModel<AboutScreenState, AboutEvents>(initialState = AboutScreenState()) {
 
     init {
@@ -30,9 +28,6 @@ class AboutViewModel(
 
             val contactsEntity = getContactsUseCase()
             _state.update { it.copy(contacts = contactsEntity.toContactsState()) }
-
-            val educationEntity = getEducationUseCase()
-            _state.update { it.copy(education = educationEntity.toEducationState()) }
         }
     }
 

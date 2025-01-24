@@ -7,6 +7,6 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) =
     startKoin {
         appDeclaration()
         modules(
-            viewModelModule + aboutMeModule
+            viewModelModule + aboutMeModule + educationModule
         )
     }

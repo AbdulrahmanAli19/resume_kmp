@@ -2,11 +2,8 @@ package abdulrahman.ali19.screens.aboutme.ui.viewmodel
 
 import abdulrahman.ali19.screens.aboutme.domain.model.ContactInformationEntity
 import abdulrahman.ali19.screens.aboutme.domain.model.ContactInformationType
-import abdulrahman.ali19.screens.aboutme.domain.model.EducationEntity
 import abdulrahman.ali19.screens.aboutme.domain.model.PersonalInformationEntity
-import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.ActivityState
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.ContactsState
-import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.EducationState
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.PersonalInformationState
 
 fun PersonalInformationEntity.toPersonalInformationState(): PersonalInformationState {
@@ -29,27 +26,5 @@ fun List<ContactInformationEntity>.toContactsState(): List<ContactsState> {
             isCopyable = it.isCopyable ?: false,
             isClickable = it.isClickable ?: false
         )
-    }
-}
-
-fun List<EducationEntity>.toEducationState(): List<EducationState> {
-    return this.map {
-        EducationState(
-            name = it.name,
-            startDate = it.startDate,
-            endDate = it.endDate,
-            location = it.location,
-            info = it.info,
-            department = it.department,
-            activities = it.activities.map { activity ->
-                ActivityState(
-                    title = activity.title,
-                    name = activity.name,
-                    startDate = activity.startDate,
-                    endDate = activity.endDate
-                )
-            }
-        )
-
     }
 }

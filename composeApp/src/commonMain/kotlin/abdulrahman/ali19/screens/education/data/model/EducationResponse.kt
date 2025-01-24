@@ -1,4 +1,4 @@
-package abdulrahman.ali19.screens.aboutme.data.model
+package abdulrahman.ali19.screens.education.data.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,11 +1,9 @@
 package abdulrahman.ali19.screens.aboutme.data.repo
 
 import abdulrahman.ali19.screens.aboutme.data.model.ContactInformationResponse
-import abdulrahman.ali19.screens.aboutme.data.model.EducationResponse
 import abdulrahman.ali19.screens.aboutme.data.model.PersonalInformationResponse
 import abdulrahman.ali19.screens.aboutme.data.model.mappers.toEntity
 import abdulrahman.ali19.screens.aboutme.domain.model.ContactInformationEntity
-import abdulrahman.ali19.screens.aboutme.domain.model.EducationEntity
 import abdulrahman.ali19.screens.aboutme.domain.model.PersonalInformationEntity
 import abdulrahman.ali19.screens.aboutme.domain.repo.AboutMeRepo
 import kotlinx.serialization.json.Json
@@ -25,10 +23,6 @@ class AboutMeRepoImpl : AboutMeRepo {
         return jsonString.toEntity()
     }
 
-    override suspend fun getEducationInformation(): List<EducationEntity> {
-        val jsonString = getResource<EducationResponse>("education.json")
-        return jsonString.toEntity()
-    }
 
     private val json = Json {
         ignoreUnknownKeys = true
