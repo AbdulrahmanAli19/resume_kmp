@@ -1,6 +1,8 @@
 package abdulrahman.ali19.screens.aboutme.ui
 
 import abdulrahman.ali19.core.ui.LoadImage
+import abdulrahman.ali19.screens.aboutme.ui.components.AnimatedImage
+import abdulrahman.ali19.screens.aboutme.ui.components.ContactUiItem
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.AboutViewModel
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.AboutEvents
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.AboutScreenState
@@ -58,7 +60,7 @@ fun AboutMeScreen(
 
         Box(
             modifier = Modifier
-                .weight(1f),
+                .weight(.8f),
             contentAlignment = Alignment.Center
         ) {
             FirstSection(
@@ -70,7 +72,7 @@ fun AboutMeScreen(
 
         Box(
             modifier = Modifier
-                .weight(1f),
+                .weight(.5f),
             contentAlignment = Alignment.Center
         ) {
             LoadImage(
@@ -84,7 +86,7 @@ fun AboutMeScreen(
 
         Box(
             modifier = Modifier
-                .weight(1f),
+                .weight(.8f),
             contentAlignment = Alignment.Center
         ) {
             ThirdSection(state = state.personalInformationState)

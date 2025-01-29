@@ -1,4 +1,4 @@
-package abdulrahman.ali19.screens.aboutme.ui
+package abdulrahman.ali19.screens.aboutme.ui.components
 
 import abdulrahman.ali19.core.ui.LoadImage
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.ContactsState

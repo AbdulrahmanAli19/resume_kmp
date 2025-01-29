@@ -1,6 +1,7 @@
 package abdulrahman.ali19.screens.aboutme.ui
 
 import abdulrahman.ali19.core.ui.LoadImage
+import abdulrahman.ali19.screens.aboutme.ui.components.ContactUiItem
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.AboutViewModel
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.AboutEvents
 import androidx.compose.foundation.layout.Arrangement
