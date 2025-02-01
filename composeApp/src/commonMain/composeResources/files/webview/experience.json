@@ -1,12 +1,13 @@
 {
   "experience": [
     {
-      "title": "Associate Software Engineer",
+      "title": "Software Engineer",
       "company": "Fawry",
       "start_date": "December 2023",
-      "end_date": "Current​",
-      "info": "Contributing to an application supporting 16 banks across Egypt.​",
+      "end_date": "Current",
+      "info": "As an Associate Software Engineer at Fawry since December 2023, I contribute to an application supporting 16 banks across Egypt. My role involves identifying and resolving production issues, refactoring code for performance optimization, and addressing security vulnerabilities using tools like DexGuard. I also develop and implement new features to meet business needs while ensuring application reliability and scalability using Java and Kotlin.",
       "responsibilities": [
+        "Contributing to an application supporting 16 banks across Egypt.",
         "Identify, analyze, and resolve software issues in production",
         "Refactor code, and optimize Performance.",
         "Address security vulnerabilities using tools like DexGuard.",
@@ -16,34 +17,39 @@
       "projects": [
         {
           "name": "NBE-PhoneCash",
-          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet"
+          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet",
+          "icon": "https://play-lh.googleusercontent.com/Gp1nBG_LMS9oc2Xotk0u-EfA0DXsTqYW76vFAL4OvCynlaqCeX7i6S6gPZjolX91kg=w240-h480-rw"
         },
         {
           "name": "BM Wallet",
-          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet.bm"
+          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet.bm",
+          "icon": "https://play-lh.googleusercontent.com/Sgiske7YAZDfSj9MP-Iv5mRKWwolBB86LNucWlmPK6CZuB2w2z07TvHiMkJsmFGbwA=w240-h480-rw"
         },
         {
           "name": "QNB Egypt E-Wallet",
-          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet.qnb"
+          "url": "https://play.google.com/store/apps/details?id=com.emeint.android.mwallet.qnb",
+          "icon": "https://play-lh.googleusercontent.com/XunN1qk8gLe5yzn1kWpThLL1yjbsSaDoMW60Hsb28migrlWDHZkEtYh376peQ0Adrg=w240-h480-rw"
         }
       ]
     },
     {
-      "title": "Native Android Developer",
+      "title": "Android Developer",
       "company": "Quantum Promoting Network",
       "start_date": "November 2022",
-      "end_date": "December 2023​",
-      "info": "",
+      "end_date": "December 2023",
+      "info": "Worked on debugging, upgrading, and enhancing existing apps, while implementing new features to meet business needs. Wrote clean, efficient code, collaborated with teams to align development with requirements, and developed custom UI components and animations for an improved user experience.",
       "responsibilities": [
         "Troubleshoot, debug and upgrade existing software.",
         "Adding new features to existing software.",
         "Produce clean, efficient code based on specifications.",
-        "Collaborating with other developers and stakeholders to ensure the app meets business requirements."
+        "Collaborating with other developers and stakeholders to ensure the app meets business requirements.",
+        "Develop custom UI components and animations for a smooth user experience"
       ],
       "projects": [
         {
           "name": "Kashkom",
-          "url": "https://play.google.com/store/apps/details?id=com.qpn.kamashka"
+          "url": "https://play.google.com/store/apps/details?id=com.qpn.kamashka",
+          "icon": "https://play-lh.googleusercontent.com/Ps5Zr3YOageTLMavzVBVDNtp-coasK2gY5uxqtfIcucfDQBY3nN5_iGscM_llap1K98=w240-h480-rw"
         },
         {
           "name": "Kamashka-Delivery",

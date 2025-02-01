@@ -16,5 +16,6 @@ data class ExperienceItemEntity(
 
 data class ProjectEntity(
     val name: String?,
-    val url: String?
+    val url: String?,
+    val iconUrl: String?
 )

@@ -4,5 +4,6 @@
     <string name="contact">Contacts</string>
     <string name="summary">Summary</string>
     <string name="education">Education</string>
-
+    <string name="responsibilities">Responsibilities</string>
+    <string name="projects">Projects</string>
 </resources>

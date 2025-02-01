@@ -16,9 +16,12 @@ data class ExperienceItemState(
 
 data class ProjectState(
     val name: String,
-    val url: String
+    val url: String,
+    val iconUrl: String,
+    val isClickable: Boolean
 )
 
 sealed class ExperienceEvents {
+    data class OnProjectClick(val project: ProjectState): ExperienceEvents()
 
 }

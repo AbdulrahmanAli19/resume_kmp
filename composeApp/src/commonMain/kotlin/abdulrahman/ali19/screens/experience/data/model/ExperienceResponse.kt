@@ -5,15 +5,15 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ExperienceResponse(
-    val list: List<ExperienceItemResponse>
+    @SerialName("experience") val list: List<ExperienceItemResponse>
 )
 
 @Serializable
 data class ExperienceItemResponse(
     val title: String?,
     val company: String?,
-    @SerialName("start_date")val startDate: String?,
-    @SerialName("end_date")val endDate: String?,
+    @SerialName("start_date") val startDate: String?,
+    @SerialName("end_date") val endDate: String?,
     val info: String?,
     val responsibilities: List<String>?,
     val projects: List<ProjectItemResponse>?
@@ -22,5 +22,6 @@ data class ExperienceItemResponse(
 @Serializable
 data class ProjectItemResponse(
     val name: String?,
-    val url: String?
+    val url: String?,
+    @SerialName("icon") val iconUrl: String?
 )

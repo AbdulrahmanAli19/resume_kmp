@@ -5,19 +5,21 @@ import abdulrahman.ali19.screens.experience.domain.entity.ProjectEntity
 import abdulrahman.ali19.screens.experience.ui.viewmodel.model.ExperienceItemState
 import abdulrahman.ali19.screens.experience.ui.viewmodel.model.ProjectState
 
-fun ExperienceEntity.toState() : List<ExperienceItemState> {
+fun ExperienceEntity.toState(): List<ExperienceItemState> {
     return this.experience?.map {
         ExperienceItemState(
             title = it.title ?: "",
             company = it.company ?: "",
-            startDate = it.startDate ?: "",
+            startDate = it.startDate.plus(" - "),
             endDate = it.endDate ?: "",
             info = it.info ?: "",
-            responsibilities = it.responsibilities ?: emptyList(),
-            projects = it.projects?.map {projectEntity: ProjectEntity ->
+            responsibilities = it.responsibilities?.map { item -> "- $item" } ?: emptyList(),
+            projects = it.projects?.map { projectEntity: ProjectEntity ->
                 ProjectState(
                     name = projectEntity.name ?: "",
-                    url = projectEntity.url ?: ""
+                    url = projectEntity.url ?: "",
+                    iconUrl = projectEntity.iconUrl ?: "",
+                    isClickable = !projectEntity.url.isNullOrBlank()
                 )
             } ?: emptyList()
         )

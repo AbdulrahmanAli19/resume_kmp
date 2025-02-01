@@ -18,7 +18,8 @@ fun ExperienceResponse.toEntity(): ExperienceEntity {
                 projects = experienceItem.projects?.map { projectItemResponse ->
                     ProjectEntity(
                         name = projectItemResponse.name,
-                        url = projectItemResponse.url
+                        url = projectItemResponse.url,
+                        iconUrl = projectItemResponse.iconUrl
                     )
                 }
             )

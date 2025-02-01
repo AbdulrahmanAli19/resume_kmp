@@ -1,6 +1,7 @@
 package abdulrahman.ali19.screens.experience.ui.viewmodel
 
 import abdulrahman.ali19.core.BaseViewModel
+import abdulrahman.ali19.screens.aboutme.openNewWindow
 import abdulrahman.ali19.screens.experience.domain.uasecase.GatExperienceUseCase
 import abdulrahman.ali19.screens.experience.ui.viewmodel.model.ExperienceEvents
 import abdulrahman.ali19.screens.experience.ui.viewmodel.model.ExperienceState
@@ -23,7 +24,9 @@ class ExperienceViewModel(
     }
 
     override fun sendEvent(event: ExperienceEvents) {
-
+        when(event){
+            is ExperienceEvents.OnProjectClick -> openNewWindow(event.project.url)
+        }
     }
 
 }
