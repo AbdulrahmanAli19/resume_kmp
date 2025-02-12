@@ -24,7 +24,7 @@ class ExperienceViewModel(
     }
 
     override fun sendEvent(event: ExperienceEvents) {
-        when(event){
+        when (event) {
             is ExperienceEvents.OnProjectClick -> openNewWindow(event.project.url)
         }
     }

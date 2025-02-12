@@ -100,7 +100,7 @@ private fun ExperienceItem(
 }
 
 @Composable
-private fun ResponsibilitySection(state: ExperienceItemState) {
+internal fun ResponsibilitySection(state: ExperienceItemState) {
     Column {
 
         Text(
@@ -120,16 +120,21 @@ private fun ResponsibilitySection(state: ExperienceItemState) {
 }
 
 @Composable
-private fun ExperienceHeader(state: ExperienceItemState) {
+internal fun ExperienceHeader(
+    state: ExperienceItemState,
+    isMobile: Boolean = false
+) {
     Column {
         Text(
             text = state.title,
-            style = MaterialTheme.typography.h3.copy(color = Color.White)
+            style = (if (!isMobile) MaterialTheme.typography.h3 else MaterialTheme.typography.h5)
+                .copy(color = Color.White)
         )
 
         Text(
             text = state.company,
-            style = MaterialTheme.typography.h3.copy(color = Color.White)
+            style = (if (!isMobile) MaterialTheme.typography.h4 else MaterialTheme.typography.h6)
+                .copy(color = Color.White)
         )
 
         Row {
@@ -154,7 +159,7 @@ private fun ExperienceHeader(state: ExperienceItemState) {
 }
 
 @Composable
-private fun ProjectSection(
+internal fun ProjectSection(
     project: ProjectState,
     onProjectClick: (project: ProjectState) -> Unit,
     modifier: Modifier = Modifier
