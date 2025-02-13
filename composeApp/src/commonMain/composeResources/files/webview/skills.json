@@ -1,20 +1,79 @@
 {
   "technical_skills": [
-    "Android (Kotlin - Java)",
-    "KMP",
-    "Kotlin coroutines",
-    "RX Java",
-    "RDBMS / SQLite",
-    "ORM / Room",
-    "Android Jetpack",
-    "Jetpack Compose",
-    "XML Views",
-    "Dependency Injection (Hilt / Koin)",
-    "Firebase (Crashlytics, App distribution)",
-    "RESTful API’s (Retrofit, Ktor)",
-    "Unit Testing",
-    "Memory Management",
-    "Dexguard, RASP"
+    {
+      "type": "platforms",
+      "skills": [
+        "Android",
+        "KMM/CMP"
+      ]
+    },
+    {
+      "type": "languages",
+      "skills": [
+        "Kotlin",
+        "Java"
+      ]
+    },
+    {
+      "type": "sync",
+      "skills": [
+        "Coroutines",
+        "RX Java"
+      ]
+    },
+    {
+      "type": "databases",
+      "skills": [
+        "RDBMS / SQLite",
+        "ORM / Room"
+      ]
+    },
+    {
+      "type": "brush",
+      "skills": [
+        "Jetpack Compose",
+        "XML Views",
+        "Custom Views",
+        "Material Design"
+      ]
+    },
+    {
+      "type": "api",
+      "skills": [
+        "RESTful API’s (Retrofit, Ktor)"
+      ]
+    },
+    {
+      "type": "security",
+      "skills": [
+        "Proguard",
+        "Dexguard, RASP"
+      ]
+    },
+    {
+      "type": "cloud",
+      "skills": [
+        "Firebase (Crashlytics, App distribution)"
+      ]
+    },
+    {
+      "type": "testing",
+      "skills": [
+        "Unit Testing"
+      ]
+    },
+    {
+      "type": "layers",
+      "skills": [
+        "Dependency Injection (Hilt / Koin)"
+      ]
+    },
+    {
+      "type": "memory",
+      "skills": [
+        "Leak Canary"
+      ]
+    }
   ],
   "software_engineering": [
     "Object-Oriented Programming (OOP)",
