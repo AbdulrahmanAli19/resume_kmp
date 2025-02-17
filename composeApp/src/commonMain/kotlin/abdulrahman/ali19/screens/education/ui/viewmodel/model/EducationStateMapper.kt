@@ -1,5 +1,6 @@
 package abdulrahman.ali19.screens.education.ui.viewmodel.model
 
+import abdulrahman.ali19.screens.education.domain.entity.CourseEntity
 import abdulrahman.ali19.screens.education.domain.entity.EducationEntity
 
 
@@ -20,6 +21,17 @@ fun List<EducationEntity>.toEducationState(): List<EducationItem> {
                     endDate = activity.endDate
                 )
             }
+        )
+    }
+}
+
+fun List<CourseEntity>.toCourseState(): List<CourseState> {
+    return this.map {
+        CourseState(
+            name = it.name,
+            platform = it.platform,
+            endDate = it.endDate,
+            certificateLink = it.certificateLink
         )
     }
 }

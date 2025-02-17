@@ -16,3 +16,10 @@ data class ActivityEntity(
     val startDate: String,
     val endDate: String
 )
+
+data class CourseEntity(
+    val name: String,
+    val platform: String,
+    val endDate: String,
+    val certificateLink: String?
+)

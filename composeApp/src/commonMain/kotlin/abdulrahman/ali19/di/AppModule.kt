@@ -8,6 +8,7 @@ import abdulrahman.ali19.screens.aboutme.domain.usecase.GetPersonalInformationUs
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.AboutViewModel
 import abdulrahman.ali19.screens.education.data.repo.EducationRepoImpl
 import abdulrahman.ali19.screens.education.domain.repo.EducationRepo
+import abdulrahman.ali19.screens.education.domain.usecase.GetCoursesUseCase
 import abdulrahman.ali19.screens.education.domain.usecase.GetEducationUseCase
 import abdulrahman.ali19.screens.education.ui.viewmodel.EducationViewmodel
 import abdulrahman.ali19.screens.experience.data.repo.ExperienceRepoImpl
@@ -35,6 +36,7 @@ val aboutMeModule = module {
 val educationModule = module {
     single<EducationRepo> { EducationRepoImpl() }
     single { GetEducationUseCase(repo = get()) }
+    single { GetCoursesUseCase(repo = get()) }
     viewModelOf(::EducationViewmodel)
 }
 

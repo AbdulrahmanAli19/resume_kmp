@@ -2,7 +2,8 @@ package abdulrahman.ali19.screens.education.ui.viewmodel.model
 
 
 data class EducationState(
-    val education: List<EducationItem> = emptyList()
+    val education: List<EducationItem> = emptyList(),
+    val courses: List<CourseState> = emptyList()
 )
 
 data class EducationItem(
@@ -15,6 +16,12 @@ data class EducationItem(
     val activities: List<ActivityState> = emptyList()
 )
 
+data class CourseState(
+    val name: String = "",
+    val platform: String = "",
+    val endDate: String = "",
+    val certificateLink: String? = null,
+)
 
 data class ActivityState(
     val title: String = "",
@@ -23,6 +30,6 @@ data class ActivityState(
     val endDate: String = "",
 )
 
-sealed class EducationEvents{
+sealed class EducationEvents {
 
 }

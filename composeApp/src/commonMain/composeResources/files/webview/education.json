@@ -32,27 +32,29 @@
       ]
     }
   ],
-
-  "courses" : [
+  "courses": [
     {
-      "name" : "Introduction to Flutter Development Using Dart",
-      "platform" : "Appbrewery",
-      "end_date" : "2020",
-      "certificate_link" : "https://drive.google.com/file/d/1L0qm4YW00VdJ377RM32AKpA-5Oz4Lb0n/view?usp=sharing"
-    },{
-      "name" : "Android Basics Nanodegree by Google",
-      "platform" : "Udacity",
-      "end_date" : "2019",
-      "certificate_link" : "https://udacity.com/certificate/e/eedb4d98-e3ad-11e9-99cb-d79c7f2a9c09"
-    },{
-      "name" : "Android Development Track",
-      "platform" : "1 MAC, Udacity",
-      "end_date" : "2019",
-      "certificate_link" : "https://drive.google.com/file/d/1tlbOsqb_P_g9i9DGkMDFuw_HY55Py8od/view?usp=sharing"
-    },{
-      "name" : "Mobile Application Diploma For Android",
-      "platform" : "RCC",
-      "end_date" : "2018"
+      "name": "Introduction to Flutter Development Using Dart",
+      "platform": "Appbrewery",
+      "end_date": "2020",
+      "certificate_link": "https://drive.google.com/file/d/1L0qm4YW00VdJ377RM32AKpA-5Oz4Lb0n/view?usp=sharing"
+    },
+    {
+      "name": "Android Basics Nanodegree by Google",
+      "platform": "Udacity",
+      "end_date": "2019",
+      "certificate_link": "https://udacity.com/certificate/e/eedb4d98-e3ad-11e9-99cb-d79c7f2a9c09"
+    },
+    {
+      "name": "Android Development Track",
+      "platform": "1 MAC, Udacity",
+      "end_date": "2019",
+      "certificate_link": "https://drive.google.com/file/d/1tlbOsqb_P_g9i9DGkMDFuw_HY55Py8od/view?usp=sharing"
+    },
+    {
+      "name": "Mobile Application Diploma For Android",
+      "platform": "RCC",
+      "end_date": "2018"
     }
   ]
 }

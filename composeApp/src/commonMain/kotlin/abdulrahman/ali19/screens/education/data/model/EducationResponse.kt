@@ -5,7 +5,16 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class EducationResponse(
-    @SerialName("education") val data: List<EducationItemResponse>?
+    @SerialName("education") val data: List<EducationItemResponse>?,
+    @SerialName("courses") val courses: List<CourseResponse>?
+)
+
+@Serializable
+data class CourseResponse(
+    val name: String?,
+    val platform: String?,
+    @SerialName("end_date") val endDate: String?,
+    @SerialName("certificate_link") val certificateLink: String? = null
 )
 
 @Serializable
