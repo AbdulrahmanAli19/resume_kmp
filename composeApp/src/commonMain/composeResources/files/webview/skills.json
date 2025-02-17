@@ -1,7 +1,7 @@
 {
   "technical_skills": [
     {
-      "type": "platforms",
+      "type": "technologies",
       "skills": [
         "Android",
         "KMM/CMP"
@@ -15,14 +15,14 @@
       ]
     },
     {
-      "type": "sync",
+      "type": "asynchronous programming",
       "skills": [
         "Coroutines",
-        "RX Java"
+        "RxJava"
       ]
     },
     {
-      "type": "databases",
+      "type": "database",
       "skills": [
         "RDBMS / SQLite",
         "ORM / Room"
@@ -40,32 +40,40 @@
     {
       "type": "api",
       "skills": [
-        "RESTful API’s (Retrofit, Ktor)"
+        "RESTful API’s (Retrofit, Ktor)",
+        "GraphQL (Apollo)",
+        "Websockets"
       ]
     },
     {
       "type": "security",
       "skills": [
         "Proguard",
-        "Dexguard, RASP"
+        "Dexguard",
+        "RASP"
       ]
     },
     {
       "type": "cloud",
       "skills": [
-        "Firebase (Crashlytics, App distribution)"
+        "Firebase (Crashlytics, App distribution)",
+        "Google Cloud (Firestore, Cloud Functions)"
       ]
     },
     {
       "type": "testing",
       "skills": [
-        "Unit Testing"
+        "Unit Testing",
+        "Mockito",
+        "Espresso",
+        "Junit"
       ]
     },
     {
       "type": "layers",
       "skills": [
-        "Dependency Injection (Hilt / Koin)"
+        "Dagger/Hilt",
+        "Koin"
       ]
     },
     {

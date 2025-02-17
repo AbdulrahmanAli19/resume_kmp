@@ -107,7 +107,7 @@ internal fun App() {
                 ) {
                     when (Tabs.entries[selectedTabIndex.value]) {
                         Tabs.AboutMe -> if (state.isMobile) AboutMeMobileScreen() else AboutMeScreen()
-                        Tabs.Skills -> SkillsScreen()
+                        Tabs.Skills -> SkillsScreen(isMobile = state.isMobile)
                         Tabs.Experience -> if (state.isMobile) ExperienceMobileScreen() else ExperienceScreen()
                         Tabs.Education -> EducationScreen()
                     }

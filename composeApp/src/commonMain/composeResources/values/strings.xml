@@ -6,4 +6,7 @@
     <string name="education">Education</string>
     <string name="responsibilities">Responsibilities</string>
     <string name="projects">Projects</string>
+    <string name="technical_skills">Technical Skills</string>
+    <string name="software_engineering">Software Engineering</string>
+    <string name="soft_skills">Soft Skills</string>
 </resources>

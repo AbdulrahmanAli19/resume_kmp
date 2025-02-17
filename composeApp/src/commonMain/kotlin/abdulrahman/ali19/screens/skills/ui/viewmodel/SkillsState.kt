@@ -7,10 +7,9 @@ data class SkillsState(
 )
 
 data class SkillsItemState(
-    val type: String = "",
+    val iconPath: String,
+    val name: String,
     val skills: List<String> = emptyList(),
 )
 
-sealed class SkillsEvents {
-
-}
+sealed class SkillsEvents
