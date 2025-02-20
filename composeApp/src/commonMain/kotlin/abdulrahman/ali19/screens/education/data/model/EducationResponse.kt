@@ -25,9 +25,17 @@ data class EducationItemResponse(
     val location: String,
     val info: String,
     val department: String,
-    val activities: List<Activity>
+    val activities: List<Activity>,
+    val projects: List<ProjectResponse>?
 )
 
+@Serializable
+data class ProjectResponse(
+    val name: String?,
+    val description: String?,
+    val link: String?,
+    val technologies: List<String>?
+)
 @Serializable
 data class Activity(
     val title: String,

@@ -8,7 +8,7 @@ fun List<EducationEntity>.toEducationState(): List<EducationItem> {
     return this.map {
         EducationItem(
             name = it.name,
-            startDate = it.startDate,
+            startDate = it.startDate.plus(" - "),
             endDate = it.endDate,
             location = it.location,
             info = it.info,
@@ -17,10 +17,18 @@ fun List<EducationEntity>.toEducationState(): List<EducationItem> {
                 ActivityState(
                     title = activity.title,
                     name = activity.name,
-                    startDate = activity.startDate,
+                    startDate = activity.startDate.plus(" - "),
                     endDate = activity.endDate
                 )
-            }
+            },
+            projects = it.projects?.map { project ->
+                ProjectState(
+                    name = project.name,
+                    url = project.link,
+                    technologies = project.technologies.map { "   - $it" },
+                    description = project.description,
+                )
+            } ?: emptyList()
         )
     }
 }

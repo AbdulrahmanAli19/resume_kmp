@@ -6,7 +6,19 @@ import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import org.jetbrains.compose.resources.Font
+import resume.composeapp.generated.resources.Res
+import resume.composeapp.generated.resources.notosans_black
+import resume.composeapp.generated.resources.notosans_bold
+import resume.composeapp.generated.resources.notosans_extrabold
+import resume.composeapp.generated.resources.notosans_extralight
+import resume.composeapp.generated.resources.notosans_light
+import resume.composeapp.generated.resources.notosans_medium
+import resume.composeapp.generated.resources.notosans_regular
+import resume.composeapp.generated.resources.notosans_semibold
+import resume.composeapp.generated.resources.notosans_thin
 
 private val darkColorScheme = Colors(
     background = Color.Black,
@@ -27,7 +39,7 @@ private val darkColorScheme = Colors(
 @Composable
 fun AppTheme(
     color: Colors = darkColorScheme,
-    typography: Typography = MaterialTheme.typography,
+    typography: Typography = Typography(defaultFontFamily = TekoFontFamily()) /*MaterialTheme.typography*/,
     shapes: Shapes = MaterialTheme.shapes,
     content: @Composable () -> Unit
 ) {
@@ -38,3 +50,16 @@ fun AppTheme(
         content = content
     )
 }
+
+@Composable
+fun TekoFontFamily() = FontFamily(
+    Font(Res.font.notosans_thin, weight = FontWeight.W100),
+    Font(Res.font.notosans_extralight, weight = FontWeight.W200),
+    Font(Res.font.notosans_light, weight = FontWeight.W300),
+    Font(Res.font.notosans_regular, weight = FontWeight.W400),
+    Font(Res.font.notosans_medium, weight = FontWeight.W500),
+    Font(Res.font.notosans_semibold, weight = FontWeight.W600),
+    Font(Res.font.notosans_bold, weight = FontWeight.W700),
+    Font(Res.font.notosans_extrabold, weight = FontWeight.W800),
+    Font(Res.font.notosans_black, weight = FontWeight.W900)
+)

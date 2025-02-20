@@ -3,6 +3,7 @@ package abdulrahman.ali19
 import abdulrahman.ali19.core.ui.AppTheme
 import abdulrahman.ali19.screens.aboutme.ui.AboutMeMobileScreen
 import abdulrahman.ali19.screens.aboutme.ui.AboutMeScreen
+import abdulrahman.ali19.screens.education.ui.EducationMobileScreen
 import abdulrahman.ali19.screens.education.ui.EducationScreen
 import abdulrahman.ali19.screens.experience.ui.ExperienceMobileScreen
 import abdulrahman.ali19.screens.experience.ui.ExperienceScreen
@@ -109,7 +110,7 @@ internal fun App() {
                         Tabs.AboutMe -> if (state.isMobile) AboutMeMobileScreen() else AboutMeScreen()
                         Tabs.Skills -> SkillsScreen(isMobile = state.isMobile)
                         Tabs.Experience -> if (state.isMobile) ExperienceMobileScreen() else ExperienceScreen()
-                        Tabs.Education -> EducationScreen()
+                        Tabs.Education -> if (state.isMobile) EducationMobileScreen() else EducationScreen()
                     }
                 }
             }

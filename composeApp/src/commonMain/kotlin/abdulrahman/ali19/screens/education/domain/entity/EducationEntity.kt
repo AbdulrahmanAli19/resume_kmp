@@ -7,7 +7,15 @@ data class EducationEntity(
     val location: String,
     val info: String,
     val department: String,
-    val activities: List<ActivityEntity>
+    val activities: List<ActivityEntity>,
+    val projects: List<ProjectEntity>?
+)
+
+data class ProjectEntity(
+    val name: String,
+    val description: String,
+    val link: String,
+    val technologies: List<String>
 )
 
 data class ActivityEntity(

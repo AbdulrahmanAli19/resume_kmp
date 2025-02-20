@@ -1,6 +1,9 @@
 package abdulrahman.ali19.screens.education.ui.viewmodel
 
 import abdulrahman.ali19.core.BaseViewModel
+import abdulrahman.ali19.screens.aboutme.copyToClipboard
+import abdulrahman.ali19.screens.aboutme.openNewWindow
+import abdulrahman.ali19.screens.aboutme.showToast
 import abdulrahman.ali19.screens.education.domain.usecase.GetCoursesUseCase
 import abdulrahman.ali19.screens.education.domain.usecase.GetEducationUseCase
 import abdulrahman.ali19.screens.education.ui.viewmodel.model.EducationEvents
@@ -32,6 +35,12 @@ class EducationViewmodel(
     }
 
     override fun sendEvent(event: EducationEvents) {
+        when (event) {
+            is EducationEvents.CopyLink -> copyToClipboard(value = event.link, showToast = {
+                showToast(message = "Copied to clipboard!")
+            })
 
+            is EducationEvents.OpenNewWindow -> openNewWindow(url = event.link)
+        }
     }
 }

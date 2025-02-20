@@ -13,7 +13,17 @@ data class EducationItem(
     val location: String = "",
     val info: String = "",
     val department: String = "",
-    val activities: List<ActivityState> = emptyList()
+    val activities: List<ActivityState> = emptyList(),
+    val isActivesVisible: Boolean = activities.isNotEmpty(),
+    val projects: List<ProjectState>,
+    val isProjectsVisible: Boolean = projects.isNotEmpty(),
+)
+
+data class ProjectState(
+    val name: String = "",
+    val url: String = "",
+    val technologies: List<String> = emptyList(),
+    val description: String = ""
 )
 
 data class CourseState(
@@ -31,5 +41,6 @@ data class ActivityState(
 )
 
 sealed class EducationEvents {
-
+    data class CopyLink(val link: String) : EducationEvents()
+    data class OpenNewWindow(val link: String) : EducationEvents()
 }

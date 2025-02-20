@@ -4,6 +4,7 @@ import abdulrahman.ali19.screens.education.data.model.EducationResponse
 import abdulrahman.ali19.screens.education.domain.entity.ActivityEntity
 import abdulrahman.ali19.screens.education.domain.entity.CourseEntity
 import abdulrahman.ali19.screens.education.domain.entity.EducationEntity
+import abdulrahman.ali19.screens.education.domain.entity.ProjectEntity
 
 fun EducationResponse.toEntity() = data?.map {
     EducationEntity(
@@ -21,6 +22,14 @@ fun EducationResponse.toEntity() = data?.map {
                 endDate = activity.endDate,
             )
         },
+        projects = it.projects?.map { project ->
+            ProjectEntity(
+                name = project.name ?: "",
+                description = project.description ?: "",
+                link = project.link ?: "",
+                technologies = project.technologies ?: emptyList()
+            )
+        } ?: emptyList()
     )
 } ?: emptyList()
 

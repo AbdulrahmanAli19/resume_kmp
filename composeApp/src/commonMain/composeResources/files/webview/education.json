@@ -7,7 +7,39 @@
       "location": "Suez Canal University, Ismailia, Egypt",
       "info": "I learned more about mobile app development and gained valuable knowledge and skills during the 9-month diploma program.",
       "department": "9-month Diploma in Native Mobile Development",
-      "activities": []
+      "activities": [],
+      "projects": [
+        {
+          "name": "E-Buy",
+          "description": "An e-commerce app where users can buy a product and pay online using PayPal.",
+          "link": "https://github.com/MohabElziny/Ebuy",
+          "technologies": [
+            "Kotlin",
+            "Firebase",
+            "Shopify API"
+          ]
+        },
+        {
+          "name": "News App",
+          "description": "A news app that shows trendy news to users, the app is written in Kotlin",
+          "link": "http://github.com/MennaElsayed5/NewsApp",
+          "technologies": [
+            "Kotlin",
+            "MVVM",
+            "Retrofit"
+          ]
+        },
+        {
+          "name": "Weather App",
+          "description": "A weather app that shows the next 48 hours and the current week of weather state, the app has been written and developed Kotlin",
+          "link": "https://github.com/AbdulrahmanAli19/WeatherKotlinApp",
+          "technologies": [
+            "Work manager",
+            "OpenWeatherMap API",
+            "Room"
+          ]
+        }
+      ]
     },
     {
       "name": "New Cairo Academy",
