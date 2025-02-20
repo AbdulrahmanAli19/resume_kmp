@@ -1,0 +1,102 @@
+{
+  "technical_skills": [
+    {
+      "type": "technologies",
+      "skills": [
+        "Android",
+        "KMM/CMP"
+      ]
+    },
+    {
+      "type": "languages",
+      "skills": [
+        "Kotlin",
+        "Java"
+      ]
+    },
+    {
+      "type": "asynchronous programming",
+      "skills": [
+        "Coroutines",
+        "RxJava"
+      ]
+    },
+    {
+      "type": "database",
+      "skills": [
+        "RDBMS / SQLite",
+        "ORM / Room"
+      ]
+    },
+    {
+      "type": "brush",
+      "skills": [
+        "Jetpack Compose",
+        "XML Views",
+        "Custom Views",
+        "Material Design"
+      ]
+    },
+    {
+      "type": "api",
+      "skills": [
+        "RESTful API’s (Retrofit, Ktor)",
+        "GraphQL (Apollo)",
+        "Websockets"
+      ]
+    },
+    {
+      "type": "security",
+      "skills": [
+        "Proguard",
+        "Dexguard",
+        "RASP"
+      ]
+    },
+    {
+      "type": "cloud",
+      "skills": [
+        "Firebase (Crashlytics, App distribution)",
+        "Google Cloud (Firestore, Cloud Functions)"
+      ]
+    },
+    {
+      "type": "testing",
+      "skills": [
+        "Unit Testing",
+        "Mockito",
+        "Espresso",
+        "Junit"
+      ]
+    },
+    {
+      "type": "layers",
+      "skills": [
+        "Dagger/Hilt",
+        "Koin"
+      ]
+    },
+    {
+      "type": "memory",
+      "skills": [
+        "Leak Canary"
+      ]
+    }
+  ],
+  "software_engineering": [
+    "Object-Oriented Programming (OOP)",
+    "SOLID",
+    "Clean architecture",
+    "Data Structure & Algorithms",
+    "Design Patterns",
+    "Architecture Pattern (MVI, MVVM, MVP, MVC)",
+    "Version Control (Git, Git-Hub & Git-lab)",
+    "Agile Methodologies"
+  ],
+  "soft_skills": [
+    "Problem-solving",
+    "Teamwork",
+    "Adaptability",
+    "Continuous learning"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "education": [
+    {
+      "name": "Information Technology Institute (ITI)",
+      "start_date": "October 2021",
+      "end_date": "July 2022",
+      "location": "Suez Canal University, Ismailia, Egypt",
+      "info": "I learned more about mobile app development and gained valuable knowledge and skills during the 9-month diploma program.",
+      "department": "9-month Diploma in Native Mobile Development",
+      "activities": [],
+      "projects": [
+        {
+          "name": "E-Buy",
+          "description": "An e-commerce app where users can buy a product and pay online using PayPal.",
+          "link": "https://github.com/MohabElziny/Ebuy",
+          "technologies": [
+            "Kotlin",
+            "Firebase",
+            "Shopify API"
+          ]
+        },
+        {
+          "name": "News App",
+          "description": "A news app that shows trendy news to users, the app is written in Kotlin",
+          "link": "http://github.com/MennaElsayed5/NewsApp",
+          "technologies": [
+            "Kotlin",
+            "MVVM",
+            "Retrofit"
+          ]
+        },
+        {
+          "name": "Weather App",
+          "description": "A weather app that shows the next 48 hours and the current week of weather state, the app has been written and developed Kotlin",
+          "link": "https://github.com/AbdulrahmanAli19/WeatherKotlinApp",
+          "technologies": [
+            "Work manager",
+            "OpenWeatherMap API",
+            "Room"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New Cairo Academy",
+      "start_date": "September 2017",
+      "end_date": "July 2021",
+      "location": "Cairo, Egypt",
+      "info": "",
+      "department": "Bachelor's degree in Computer Science and Management Information Systems (MIS)",
+      "activities": [
+        {
+          "title": "Flutter Developer",
+          "name": "Enactus NC, Cairo, Egypt",
+          "start_date": "February 2020",
+          "end_date": "April 2021"
+        },
+        {
+          "title": "Teaching Assistant",
+          "name": "Bdaya Team, Cairo, Egypt",
+          "start_date": "April 2019",
+          "end_date": "July 2019"
+        }
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "name": "Introduction to Flutter Development Using Dart",
+      "platform": "Appbrewery",
+      "end_date": "2020",
+      "certificate_link": "https://drive.google.com/file/d/1L0qm4YW00VdJ377RM32AKpA-5Oz4Lb0n/view?usp=sharing"
+    },
+    {
+      "name": "Android Basics Nanodegree by Google",
+      "platform": "Udacity",
+      "end_date": "2019",
+      "certificate_link": "https://udacity.com/certificate/e/eedb4d98-e3ad-11e9-99cb-d79c7f2a9c09"
+    },
+    {
+      "name": "Android Development Track",
+      "platform": "1 MAC, Udacity",
+      "end_date": "2019",
+      "certificate_link": "https://drive.google.com/file/d/1tlbOsqb_P_g9i9DGkMDFuw_HY55Py8od/view?usp=sharing"
+    },
+    {
+      "name": "Mobile Application Diploma For Android",
+      "platform": "RCC",
+      "end_date": "2018"
+    }
+  ]
+}

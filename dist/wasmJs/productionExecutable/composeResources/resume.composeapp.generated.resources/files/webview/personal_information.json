@@ -1,0 +1,12 @@
+{
+    "personal_information": {
+        "name": "Abdulrahman Ali Muhmmed",
+        "title": "Software Engineer",
+        "summary": "Innovative Android developer experienced in writing clean, efficient, and maintainable code. Passionate about developing mobile apps that solve real-world problems and enhance user experience. Adept at collaborating in cross-functional teams to bring products to life.",
+        "languages": [
+            "Arabic (native)",
+            "English"
+        ],
+        "image_url": "drawable/person.png"
+    }
+}
