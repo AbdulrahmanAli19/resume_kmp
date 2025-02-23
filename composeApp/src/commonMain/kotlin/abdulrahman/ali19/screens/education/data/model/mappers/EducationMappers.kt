@@ -20,6 +20,8 @@ fun EducationResponse.toEntity() = data?.map {
                 name = activity.name,
                 startDate = activity.startDate,
                 endDate = activity.endDate,
+                info = activity.info ?: "",
+                responsibilities = activity.responsibilities ?: emptyList()
             )
         },
         projects = it.projects?.map { project ->

@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -25,10 +26,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -108,25 +108,22 @@ fun ThirdSection(
         Text(
             text = stringResource(Res.string.summary),
             modifier = Modifier.fillMaxWidth(),
-            style = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 42.sp
-            )
+            style = MaterialTheme.typography.h2.copy(color = Color.White)
         )
 
         Text(
             text = state.summary,
             modifier = Modifier.fillMaxWidth(),
-            style = TextStyle(
-                fontWeight = FontWeight.Thin,
-                fontSize = 22.sp
+            style = MaterialTheme.typography.h6.copy(
+                color = Color.White,
+                fontWeight = FontWeight.Light
             )
         )
 
         Box(
             modifier = Modifier
                 .height(270.dp)
-                .padding(top = 20.dp)
+                .padding(top = 50.dp)
         ) {
             Column(
                 modifier = Modifier
@@ -220,18 +217,12 @@ fun FirstSection(
 
         Text(
             text = state.personalInformationState.name,
-            style = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 42.sp
-            )
+            style = MaterialTheme.typography.h2.copy(color = Color.White)
         )
 
         Text(
             text = state.personalInformationState.title,
-            style = TextStyle(
-                fontWeight = FontWeight.Normal,
-                fontSize = 32.sp
-            )
+            style = MaterialTheme.typography.h4.copy(color = Color.White)
         )
 
         Column(

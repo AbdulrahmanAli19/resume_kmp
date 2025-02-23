@@ -26,7 +26,7 @@ data class EducationItemResponse(
     val info: String,
     val department: String,
     val activities: List<Activity>,
-    val projects: List<ProjectResponse>?
+    val projects: List<ProjectResponse>?,
 )
 
 @Serializable
@@ -41,5 +41,7 @@ data class Activity(
     val title: String,
     val name: String,
     @SerialName("start_date") val startDate: String,
-    @SerialName("end_date") val endDate: String
+    @SerialName("end_date") val endDate: String,
+    val info: String?,
+    val responsibilities: List<String>?
 )

@@ -23,6 +23,7 @@ import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.getKoin
 import resume.composeapp.generated.resources.Res
 import resume.composeapp.generated.resources.activities
+import resume.composeapp.generated.resources.courses
 import resume.composeapp.generated.resources.projects
 
 @Composable
@@ -44,6 +45,25 @@ fun EducationMobileScreen(
                 },
                 onCopyClick = { link ->
                     viewmodel.sendEvent(EducationEvents.CopyLink(link))
+                }
+            )
+        }
+
+        item {
+            Text(
+                text = stringResource(Res.string.courses),
+                style = MaterialTheme.typography.h4.copy(Color.White)
+            )
+        }
+
+        items(state.courses) {
+            CourseItem(
+                courseState = it,
+                onContactClick = { uri ->
+                    viewmodel.sendEvent(EducationEvents.OpenNewWindow(uri ?: ""))
+                },
+                onCopyClick = { uri ->
+                    viewmodel.sendEvent(EducationEvents.CopyLink(uri ?: ""))
                 }
             )
         }

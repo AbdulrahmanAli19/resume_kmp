@@ -11,16 +11,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import io.github.aakira.napier.LogLevel
 import io.github.aakira.napier.Napier
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -71,10 +70,9 @@ private fun ContactButton(
             Text(
                 modifier = Modifier.padding(start = 10.dp),
                 text = item.value,
-                style = TextStyle(
-                    fontWeight = FontWeight.Bold,
+                style = MaterialTheme.typography.body1.copy(
                     color = Color.White,
-                    fontSize = 14.sp
+                    fontWeight = FontWeight.Medium
                 )
             )
         }

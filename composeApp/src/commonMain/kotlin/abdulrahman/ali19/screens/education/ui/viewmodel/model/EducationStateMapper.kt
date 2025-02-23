@@ -18,14 +18,18 @@ fun List<EducationEntity>.toEducationState(): List<EducationItem> {
                     title = activity.title,
                     name = activity.name,
                     startDate = activity.startDate.plus(" - "),
-                    endDate = activity.endDate
+                    endDate = activity.endDate,
+                    info = activity.info,
+                    responsibilities = activity.responsibilities,
                 )
             },
             projects = it.projects?.map { project ->
                 ProjectState(
                     name = project.name,
                     url = project.link,
-                    technologies = project.technologies.map { "   - $it" },
+                    technologies = project.technologies.foldIndexed("Technologies: ") { index, acc, s ->
+                        if (index != project.technologies.size - 1) "$acc $s -" else "$acc $s."
+                    },
                     description = project.description,
                 )
             } ?: emptyList()
@@ -39,7 +43,9 @@ fun List<CourseEntity>.toCourseState(): List<CourseState> {
             name = it.name,
             platform = it.platform,
             endDate = it.endDate,
-            certificateLink = it.certificateLink
+            certificateLink = it.certificateLink,
+            previewText = it.name.plus(", ").plus(it.platform).plus(", ")
+                .plus(it.endDate).plus(".")
         )
     }
 }

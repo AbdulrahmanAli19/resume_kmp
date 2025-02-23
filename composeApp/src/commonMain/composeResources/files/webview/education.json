@@ -5,7 +5,7 @@
       "start_date": "October 2021",
       "end_date": "July 2022",
       "location": "Suez Canal University, Ismailia, Egypt",
-      "info": "I learned more about mobile app development and gained valuable knowledge and skills during the 9-month diploma program.",
+      "info": "I learned more about mobile app development and gained valuable knowledge and skills during the 9-month diploma program. I focused on data structures, design patterns, and RESTful WebService basics, and used Kotlin, and Java to build several mobile projects throughout the program.",
       "department": "9-month Diploma in Native Mobile Development",
       "activities": [],
       "projects": [
@@ -46,20 +46,30 @@
       "start_date": "September 2017",
       "end_date": "July 2021",
       "location": "Cairo, Egypt",
-      "info": "",
+      "info": "Contribute to student activities:",
       "department": "Bachelor's degree in Computer Science and Management Information Systems (MIS)",
       "activities": [
         {
           "title": "Flutter Developer",
           "name": "Enactus NC, Cairo, Egypt",
           "start_date": "February 2020",
-          "end_date": "April 2021"
+          "end_date": "April 2021",
+          "info": "Participated in creating and building the chat part of Enactus NC, Which is a hyped social application that has been built with Flutter and Firebase.",
+          "responsibilities": [
+            "Developed the chat part of the application.",
+            "Participated in the design of the application."
+          ]
         },
         {
           "title": "Teaching Assistant",
           "name": "Bdaya Team, Cairo, Egypt",
           "start_date": "April 2019",
-          "end_date": "July 2019"
+          "end_date": "July 2019",
+          "responsibilities": [
+            "Participated in teaching students in our academy the basics of Java.",
+            "Helped students in solving problems and debugging their code.",
+            "Assisted in creating and developing the team's website."
+          ]
         }
       ]
     }
@@ -85,7 +95,7 @@
     },
     {
       "name": "Mobile Application Diploma For Android",
-      "platform": "RCC",
+      "platform": "RCC, Giza, Egypt",
       "end_date": "2018"
     }
   ]

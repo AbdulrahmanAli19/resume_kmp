@@ -22,7 +22,9 @@ data class ActivityEntity(
     val title: String,
     val name: String,
     val startDate: String,
-    val endDate: String
+    val endDate: String,
+    val info: String,
+    val responsibilities: List<String>
 )
 
 data class CourseEntity(

@@ -12,6 +12,7 @@ data class EducationItem(
     val endDate: String = "",
     val location: String = "",
     val info: String = "",
+    val isInfoVisible: Boolean = info.isNotEmpty(),
     val department: String = "",
     val activities: List<ActivityState> = emptyList(),
     val isActivesVisible: Boolean = activities.isNotEmpty(),
@@ -22,7 +23,7 @@ data class EducationItem(
 data class ProjectState(
     val name: String = "",
     val url: String = "",
-    val technologies: List<String> = emptyList(),
+    val technologies: String = "",
     val description: String = ""
 )
 
@@ -31,6 +32,8 @@ data class CourseState(
     val platform: String = "",
     val endDate: String = "",
     val certificateLink: String? = null,
+    val isClickable: Boolean = certificateLink != null,
+    val previewText: String = ""
 )
 
 data class ActivityState(
@@ -38,6 +41,10 @@ data class ActivityState(
     val name: String = "",
     val startDate: String = "",
     val endDate: String = "",
+    val info: String,
+    val isInfoVisible: Boolean = info.isNotEmpty(),
+    val responsibilities: List<String>,
+    val isResponsibilitiesVisible: Boolean = responsibilities.isNotEmpty(),
 )
 
 sealed class EducationEvents {

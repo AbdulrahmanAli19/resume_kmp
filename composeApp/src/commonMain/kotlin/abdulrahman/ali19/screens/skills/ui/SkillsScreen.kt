@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -61,10 +62,7 @@ fun SkillsScreen(
         item(span = { GridItemSpan(maxLineSpan) }) {
             Text(
                 text = stringResource(Res.string.technical_skills),
-                style = TextStyle(
-                    color = Color.White,
-                    fontSize = 24.sp
-                )
+                style = MaterialTheme.typography.h4.copy(Color.White)
             )
         }
 
@@ -75,10 +73,7 @@ fun SkillsScreen(
         item(span = { GridItemSpan(maxLineSpan) }) {
             Text(
                 text = stringResource(Res.string.software_engineering),
-                style = TextStyle(
-                    color = Color.White,
-                    fontSize = 24.sp
-                )
+                style = MaterialTheme.typography.h4.copy(Color.White)
             )
         }
 

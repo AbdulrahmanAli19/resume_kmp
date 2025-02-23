@@ -2,6 +2,7 @@ package abdulrahman.ali19.screens.education.ui
 
 import abdulrahman.ali19.screens.education.ui.viewmodel.EducationViewmodel
 import abdulrahman.ali19.screens.education.ui.viewmodel.model.ActivityState
+import abdulrahman.ali19.screens.education.ui.viewmodel.model.CourseState
 import abdulrahman.ali19.screens.education.ui.viewmodel.model.EducationEvents
 import abdulrahman.ali19.screens.education.ui.viewmodel.model.EducationItem
 import abdulrahman.ali19.screens.education.ui.viewmodel.model.ProjectState
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,6 +30,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -35,7 +39,9 @@ import org.koin.compose.getKoin
 import resume.composeapp.generated.resources.Res
 import resume.composeapp.generated.resources.activities
 import resume.composeapp.generated.resources.content_copy
+import resume.composeapp.generated.resources.courses
 import resume.composeapp.generated.resources.projects
+import resume.composeapp.generated.resources.responsibilities
 
 @Composable
 fun EducationScreen(
@@ -49,7 +55,6 @@ fun EducationScreen(
             .fillMaxWidth(),
         columns = GridCells.Fixed(2),
         horizontalArrangement = Arrangement.spacedBy(24.dp),
-        verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         items(state.education) {
             EducationItem(
@@ -63,8 +68,77 @@ fun EducationScreen(
                 }
             )
         }
+
+        item(span = { GridItemSpan(maxLineSpan) }) {
+            Text(
+                text = stringResource(Res.string.courses),
+                style = MaterialTheme.typography.h4.copy(Color.White)
+            )
+        }
+
+        items(state.courses) {
+            CourseItem(
+                courseState = it,
+                onContactClick = { uri ->
+                    viewmodel.sendEvent(EducationEvents.OpenNewWindow(uri ?: ""))
+                },
+                onCopyClick = { uri ->
+                    viewmodel.sendEvent(EducationEvents.CopyLink(uri ?: ""))
+                }
+            )
+        }
     }
 }
+
+@Composable
+fun CourseItem(
+    modifier: Modifier = Modifier,
+    courseState: CourseState,
+    onContactClick: (uri: String?) -> Unit,
+    onCopyClick: (uri: String?) -> Unit
+) {
+    TextButton(
+        modifier = Modifier.padding(end = 30.dp),
+        enabled = courseState.isClickable,
+        onClick = { onContactClick(courseState.certificateLink) },
+        content = {
+            Row(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(12.dp)
+                    .clip(RoundedCornerShape(12.dp)),
+                verticalAlignment = Alignment.Top,
+            ) {
+                Text(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(start = 12.dp),
+                    text = courseState.previewText,
+                    style = MaterialTheme.typography.body1.copy(color = Color.White),
+                    maxLines = 3,
+                    overflow = TextOverflow.Ellipsis
+                )
+
+                if (courseState.isClickable)
+                    IconButton(
+                        modifier = Modifier
+                            .align(Alignment.Top),
+                        enabled = courseState.isClickable,
+                        onClick = { onCopyClick(courseState.certificateLink) },
+                        content = {
+                            Icon(
+                                painter = painterResource(Res.drawable.content_copy),
+                                contentDescription = courseState.name,
+                                modifier = Modifier.size(30.dp),
+                                tint = Color.Gray
+                            )
+                        }
+                    )
+            }
+        }
+    )
+}
+
 
 @Composable
 private fun EducationItem(
@@ -131,18 +205,25 @@ fun EducationProjectSection(
             content = {
                 Column {
                     ProjectHeader(onCopyClick = onCopyClick, projectState = projectState)
+
                     Text(
                         modifier = Modifier.padding(start = 12.dp),
                         text = projectState.description,
-                        style = MaterialTheme.typography.body1.copy(color = Color.White)
-                    )
-                    projectState.technologies.forEach {
-                        Text(
-                            modifier = Modifier.padding(start = 12.dp),
-                            text = it,
-                            style = MaterialTheme.typography.body1.copy(color = Color.White)
+                        style = MaterialTheme.typography.body1.copy(
+                            color = Color.White,
+                            fontWeight = FontWeight.Light
                         )
-                    }
+                    )
+
+                    Text(
+                        modifier = Modifier.padding(start = 12.dp),
+                        text = projectState.technologies,
+                        style = MaterialTheme.typography.body1.copy(
+                            color = Color.White,
+                            fontWeight = FontWeight.Light
+                        )
+                    )
+
                 }
             }
         )
@@ -169,7 +250,7 @@ fun ProjectHeader(
             Text(
                 modifier = Modifier.padding(start = 10.dp),
                 text = projectState.name,
-                style =  MaterialTheme.typography.body1.copy(color = Color.White)
+                style = MaterialTheme.typography.body1.copy(color = Color.White)
             )
         }
 
@@ -217,14 +298,51 @@ internal fun ActivitySection(
         ) {
             Text(
                 text = activityState.startDate,
-                style = MaterialTheme.typography.body1.copy(color = Color.White)
+                style = MaterialTheme.typography.body1.copy(
+                    color = Color.White,
+                    fontWeight = FontWeight.Normal
+                )
             )
 
             Text(
                 text = activityState.endDate,
-                style = MaterialTheme.typography.body1.copy(color = Color.White)
+                style = MaterialTheme.typography.body1.copy(
+                    color = Color.White,
+                    fontWeight = FontWeight.Normal
+                )
             )
         }
+
+        if (activityState.isInfoVisible)
+            Text(
+                modifier = Modifier.padding(start = 12.dp, top = 8.dp),
+                text = activityState.info,
+                style = MaterialTheme.typography.body1.copy(
+                    color = Color.White,
+                    fontWeight = FontWeight.Light
+                )
+            )
+
+        if (activityState.isResponsibilitiesVisible) {
+            Text(
+                modifier = Modifier.padding(start = 12.dp, top = 8.dp),
+                text = stringResource(Res.string.responsibilities).plus(":"),
+                style = MaterialTheme.typography.body1.copy(color = Color.White)
+            )
+
+            activityState.responsibilities.forEach {
+                Text(
+                    modifier = Modifier.padding(start = 18.dp),
+                    text = "- $it",
+                    style = MaterialTheme.typography.body1.copy(
+                        color = Color.White,
+                        fontWeight = FontWeight.Light
+                    )
+                )
+            }
+        }
+
+
     }
 }
 
@@ -257,12 +375,15 @@ internal fun EducationHeader(
                 style = MaterialTheme.typography.body1.copy(color = Color.White)
             )
         }
-
-        Text(
-            modifier = Modifier.padding(vertical = 16.dp, horizontal = 6.dp),
-            text = state.info,
-            style = MaterialTheme.typography.body1.copy(color = Color.White)
-        )
+        if (state.isInfoVisible)
+            Text(
+                modifier = Modifier.padding(vertical = 16.dp, horizontal = 6.dp),
+                text = state.info,
+                style = MaterialTheme.typography.body1.copy(
+                    color = Color.White,
+                    fontWeight = FontWeight.Light
+                )
+            )
 
     }
 }

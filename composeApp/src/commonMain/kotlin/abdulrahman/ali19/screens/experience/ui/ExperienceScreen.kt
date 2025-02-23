@@ -35,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.getKoin
@@ -113,7 +114,10 @@ internal fun ResponsibilitySection(state: ExperienceItemState) {
             Text(
                 modifier = Modifier.padding(start = 22.dp),
                 text = it,
-                style = MaterialTheme.typography.body1.copy(color = Color.White)
+                style = MaterialTheme.typography.body1.copy(
+                    color = Color.White,
+                    fontWeight = FontWeight.Light
+                )
             )
         }
     }
@@ -152,7 +156,10 @@ internal fun ExperienceHeader(
         Text(
             modifier = Modifier.padding(vertical = 16.dp, horizontal = 6.dp),
             text = state.info,
-            style = MaterialTheme.typography.body1.copy(color = Color.White)
+            style = MaterialTheme.typography.body1.copy(
+                color = Color.White,
+                fontWeight = FontWeight.Light
+            )
         )
 
     }
