@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -18,10 +19,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.getKoin
@@ -57,34 +57,31 @@ fun AboutMeMobileScreen(
 
         Text(
             text = state.personalInformationState.name,
-            style = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp
+            style = MaterialTheme.typography.h4.copy(
+                color = Color.White
             )
         )
 
         Text(
             text = state.personalInformationState.title,
-            style = TextStyle(
-                fontWeight = FontWeight.Normal,
-                fontSize = 20.sp
+            style = MaterialTheme.typography.h5.copy(
+                color = Color.White
             )
         )
 
         Text(
             text = stringResource(Res.string.summary),
             modifier = Modifier.fillMaxWidth(),
-            style = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp
+            style = MaterialTheme.typography.h5.copy(
+                color = Color.White
             )
         )
 
         Text(
             text = state.personalInformationState.summary,
-            style = TextStyle(
-                fontWeight = FontWeight.Thin,
-                fontSize = 20.sp
+            style = MaterialTheme.typography.body1.copy(
+                fontWeight = FontWeight.Light,
+                color = Color.White
             )
         )
 
@@ -94,9 +91,8 @@ fun AboutMeMobileScreen(
             modifier = Modifier
                 .padding(top = 14.dp)
                 .fillMaxWidth(),
-            style = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp
+            style = MaterialTheme.typography.h5.copy(
+                color = Color.White
             )
         )
 
