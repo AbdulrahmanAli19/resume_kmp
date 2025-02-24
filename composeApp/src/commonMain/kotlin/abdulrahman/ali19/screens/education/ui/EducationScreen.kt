@@ -98,7 +98,9 @@ fun CourseItem(
     onCopyClick: (uri: String?) -> Unit
 ) {
     TextButton(
-        modifier = Modifier.padding(end = 30.dp),
+        modifier = Modifier
+            .clip(RoundedCornerShape(12.dp))
+            .padding(horizontal = 12.dp, vertical = 8.dp),
         enabled = courseState.isClickable,
         onClick = { onContactClick(courseState.certificateLink) },
         content = {
@@ -108,11 +110,11 @@ fun CourseItem(
                     .padding(12.dp)
                     .clip(RoundedCornerShape(12.dp)),
                 verticalAlignment = Alignment.Top,
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
                     modifier = Modifier
-                        .weight(1f)
-                        .padding(start = 12.dp),
+                        .weight(1f),
                     text = courseState.previewText,
                     style = MaterialTheme.typography.body1.copy(color = Color.White),
                     maxLines = 3,
