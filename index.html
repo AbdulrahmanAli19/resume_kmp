@@ -29,24 +29,26 @@
                     </div>
                 `;
             } else {
-                // Add the loading screen
-                document.body.innerHTML = `
-                    <div id="loading-screen">
-                        <span class="loader"></span>
-                    </div>
-                `;
 
-                // Load the Compose Multiplatform app
-                const script = document.createElement("script");
-                script.type = "application/javascript";
-                script.src = "composeApp.js";
+            document.body.innerHTML = `
+                <div id="loading-screen">
+                    <span class="loader"></span>
+                </div>
+            `;
 
-                // Hide loading screen when the app is ready
-                script.onload = function () {
-                    document.getElementById("loading-screen").style.display = "none";
-                };
+            window.addEventListener("ComposeReady", () => {
+                const loadingScreen = document.getElementById("loading-screen");
+                if (loadingScreen) {
+                    loadingScreen.style.display = "none";
+                }
+            });
 
-                document.head.appendChild(script);
+            const script = document.createElement("script");
+            script.type = "application/javascript";
+            script.src = "composeApp.js";
+
+            document.head.appendChild(script);
+
             }
 
             // Apply styles for loading and Safari warning
