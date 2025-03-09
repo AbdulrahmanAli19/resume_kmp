@@ -3,9 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>resume</title>
+    <title>Resume</title>
     <link type="text/css" rel="stylesheet" href="styles.css">
-    <script type="application/javascript" src="composeApp.js"></script>
+
+    <script>
+        // Safari Detection (including iOS Safari)
+        function isSafari() {
+            const userAgent = navigator.userAgent;
+            const vendor = navigator.vendor;
+
+            return (
+                vendor.includes("Apple") &&
+                !userAgent.includes("CriOS") && // Not Chrome on iOS
+                !userAgent.includes("FxiOS")   // Not Firefox on iOS
+            );
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // If Safari, show the unsupported browser message
+            if (isSafari()) {
+                document.body.innerHTML = `
+                    <div class="safari-warning">
+                        <h1>Unsupported Browser</h1>
+                        <p>This app does not work on Safari. Please use <strong>Google Chrome</strong> or another modern browser.</p>
+                    </div>
+                `;
+            } else {
+                // Add the loading screen
+                document.body.innerHTML = `
+                    <div id="loading-screen">
+                        <span class="loader"></span>
+                    </div>
+                `;
+
+                // Load the Compose Multiplatform app
+                const script = document.createElement("script");
+                script.type = "application/javascript";
+                script.src = "composeApp.js";
+
+                // Hide loading screen when the app is ready
+                script.onload = function () {
+                    document.getElementById("loading-screen").style.display = "none";
+                };
+
+                document.head.appendChild(script);
+            }
+
+            // Apply styles for loading and Safari warning
+            const style = document.createElement("style");
+            style.innerHTML = `
+                /* Global Styles */
+                body {
+                    margin: 0;
+                    height: 100vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: black;
+                    color: white;
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                    overflow: hidden;
+                }
+
+                /* Loading Screen Styles */
+                #loading-screen {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .loader {
+                  width: 108px;
+                  height: 16px;
+                  background:
+                    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0),
+                    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0);
+                  background-size: 16px 16px;
+                  background-repeat: no-repeat;
+                  position: relative;
+                  animation: ballX 1s linear infinite;
+                }
+
+                .loader:before {
+                  content: "";
+                  position: absolute;
+                  width: 16px;
+                  height: 16px;
+                  border-radius: 50%;
+                  background:#FFF;
+                  inset:0;
+                  margin:auto;
+                  animation: moveX 1s cubic-bezier(0.5,300,0.5,-300) infinite;
+                }
+                @keyframes ballX {
+                  0%,25%,50%,75%, 100%  {background-position: 25% 0,75% 0}
+                  40%     {background-position: 25% 0,85% 0}
+                  90%     {background-position: 15% 0,75% 0}
+                }
+                @keyframes moveX {
+                  100% {transform:translate(0.15px)}
+                }
+
+
+                /* Safari Warning Styles */
+                .safari-warning {
+                    max-width: 600px;
+                    padding: 20px;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
 </head>
 <body>
 </body>
