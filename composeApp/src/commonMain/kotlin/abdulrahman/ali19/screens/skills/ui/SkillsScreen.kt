@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -106,21 +107,45 @@ fun TechnicalSkillItem(it: SkillsItemState) {
             .clip(RoundedCornerShape(12.dp))
             .background(BACKGROUND_COLOR)
             .padding(10.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        AsyncIcon(
-            image = it.iconPath,
-            contentDescription = it.name,
-        )
 
-        it.skills.forEach { skill ->
-            Text(
-                modifier = Modifier.padding(top = 5.dp),
-                text = skill,
-                style = TextStyle(
-                    color = Color.White
-                )
+        Column  (
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
+            AsyncIcon(
+                image = it.iconPath,
+                contentDescription = it.name,
             )
+            Text(
+                modifier = Modifier
+                    .padding(vertical = 5.dp),
+                text = it.name,
+                style = MaterialTheme.typography.body1.copy(Color.White),
+            )
+        }
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
+
+
+            Column(
+                horizontalAlignment = Alignment.Start,
+                verticalArrangement = Arrangement.Center,
+            ) {
+
+                it.skills.forEach { skill ->
+                    Text(
+                        modifier = Modifier.padding(top = 5.dp),
+                        text = skill,
+                        style = TextStyle(
+                            color = Color.White
+                        )
+                    )
+                }
+            }
         }
     }
 }
@@ -158,7 +183,7 @@ private fun AsyncIcon(
 ) {
     Box(
         modifier = modifier
-            .size(100.dp)
+            .size(50.dp)
             .padding(10.dp)
     ) {
         LoadImage(

@@ -1,35 +1,35 @@
 {
   "technical_skills": [
     {
-      "type": "technologies",
+      "type": "Technologies",
       "skills": [
         "Android",
         "KMM/CMP"
       ]
     },
     {
-      "type": "languages",
+      "type": "Languages",
       "skills": [
         "Kotlin",
         "Java"
       ]
     },
     {
-      "type": "asynchronous programming",
+      "type": "Reactive",
       "skills": [
         "Coroutines",
         "RxJava"
       ]
     },
     {
-      "type": "database",
+      "type": "Database",
       "skills": [
         "RDBMS / SQLite",
         "ORM / Room"
       ]
     },
     {
-      "type": "brush",
+      "type": "UI & Design",
       "skills": [
         "Jetpack Compose",
         "XML Views",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "type": "api",
+      "type": "Networking",
       "skills": [
         "RESTful API’s (Retrofit, Ktor)",
         "GraphQL (Apollo)",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "type": "security",
+      "type": "Security",
       "skills": [
         "Proguard",
         "Dexguard",
@@ -54,14 +54,14 @@
       ]
     },
     {
-      "type": "cloud",
+      "type": "Cloud Services",
       "skills": [
         "Firebase (Crashlytics, App distribution)",
         "Google Cloud (Firestore, Cloud Functions)"
       ]
     },
     {
-      "type": "testing",
+      "type": "Testing",
       "skills": [
         "Unit Testing",
         "Mockito",
@@ -70,14 +70,14 @@
       ]
     },
     {
-      "type": "layers",
+      "type": "DI Frameworks",
       "skills": [
         "Dagger/Hilt",
         "Koin"
       ]
     },
     {
-      "type": "memory",
+      "type": "Memory",
       "skills": [
         "Leak Canary"
       ]

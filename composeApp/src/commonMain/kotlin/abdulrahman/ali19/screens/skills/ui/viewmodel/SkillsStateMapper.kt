@@ -15,23 +15,23 @@ fun SkillsItemEntity.toSkillsItemState(): SkillsItemState {
     val iconName: Pair<String, String> = getIconName(type ?: "")
     return SkillsItemState(
         iconPath = iconName.second,
-        name = iconName.second,
+        name = iconName.first,
         skills = skills?.mapIndexed { index, s -> "${index + 1}.$s" } ?: emptyList()
     )
 }
 
 private fun getIconName(type: String): Pair<String, String> {
-    return when (type) {
+    return when (type.lowercase()) {
         "technologies" -> Pair(type, "drawable/technologies.svg")
         "languages" -> Pair(type, "drawable/languages.svg")
-        "asynchronous programming" -> Pair(type, "drawable/asynchronous_programming.svg")
+        "reactive" -> Pair(type, "drawable/asynchronous_programming.svg")
         "database" -> Pair(type, "drawable/database_skill.svg")
-        "brush" -> Pair(type, "drawable/brush.svg")
-        "api" -> Pair(type, "drawable/api.svg")
+        "ui & design" -> Pair(type, "drawable/brush.svg")
+        "networking" -> Pair(type, "drawable/api.svg")
         "security" -> Pair(type, "drawable/security_skill.svg")
-        "cloud" -> Pair(type, "drawable/cloud.svg")
+        "cloud services" -> Pair(type, "drawable/cloud.svg")
         "testing" -> Pair(type, "drawable/test.svg")
-        "layers" -> Pair(type, "drawable/layers.svg")
+        "di frameworks" -> Pair(type, "drawable/layers.svg")
         "memory" -> Pair(type, "drawable/memory.png")
         else -> Pair("", "")
     }
