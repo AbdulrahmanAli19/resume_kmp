@@ -5,6 +5,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.window.ComposeViewport
 import kotlinx.browser.document
 import kotlinx.browser.window
+import org.w3c.dom.events.Event
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
@@ -13,4 +14,6 @@ fun main() {
         window.document.title = "Abdulrahman Ali"
         App()
     }
+    window.dispatchEvent(Event("ComposeReady"))
+
 }
