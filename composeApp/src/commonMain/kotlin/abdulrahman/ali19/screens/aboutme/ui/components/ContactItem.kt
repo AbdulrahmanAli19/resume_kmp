@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import io.github.aakira.napier.LogLevel
 import io.github.aakira.napier.Napier
@@ -60,6 +61,7 @@ private fun ContactButton(
         Row(
             horizontalArrangement = Arrangement.Start,
             verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.weight(1f)
         ) {
 
             AsyncIcon(
@@ -68,8 +70,12 @@ private fun ContactButton(
             )
 
             Text(
-                modifier = Modifier.padding(start = 10.dp),
+                modifier = Modifier
+                    .padding(start = 4.dp)
+                    .weight(1f, fill = false),
                 text = item.value,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
                 style = MaterialTheme.typography.body1.copy(
                     color = Color.White,
                     fontWeight = FontWeight.Medium
