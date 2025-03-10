@@ -16,7 +16,7 @@ fun SkillsItemEntity.toSkillsItemState(): SkillsItemState {
     return SkillsItemState(
         iconPath = iconName.second,
         name = iconName.first,
-        skills = skills?.mapIndexed { index, s -> "${index + 1}.$s" } ?: emptyList()
+        skills = skills?.map { "- $it" } ?: emptyList()
     )
 }
 
