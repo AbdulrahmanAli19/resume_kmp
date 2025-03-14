@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Abdulrahman Ali</title>
     <link type="text/css" rel="stylesheet" href="styles.css">
-
     <script>
-        // Safari Detection (including iOS Safari)
-        function isSafari() {
-            const userAgent = navigator.userAgent;
-            const vendor = navigator.vendor;
 
-            return (
-                vendor.includes("Apple") &&
-                !userAgent.includes("CriOS") && // Not Chrome on iOS
-                !userAgent.includes("FxiOS")   // Not Firefox on iOS
-            );
-        }
+        const ua = navigator.userAgent;
 
-        document.addEventListener("DOMContentLoaded", function () {
-            // If Safari, show the unsupported browser message
-            if (isSafari()) {
-                document.body.innerHTML = `
-                    <div class="safari-warning">
-                        <h1>Unsupported Browser</h1>
-                        <p>This app does not work on Safari. Please use <strong>Google Chrome</strong> or another modern browser.</p>
-                    </div>
-                `;
-            } else {
+        const isSafari = () => /^((?!chrome|android).)*safari/i.test(ua);
 
+        const getSafariVersion = () => {
+            const match = ua.match(/Version\/(\d+\.\d+(\.\d+)?)/);
+            return match ? match[1] : null;
+        };
+
+        const isIOS = () => /OS (\d+_\d+(_\d+)?)/i.test(ua);
+
+        const getiOSVersion = () => {
+            const match = ua.match(/OS (\d+_\d+(_\d+)?)/i);
+            return match ? match[1].replace(/_/g, ".") : null;
+        };
+
+        const isSupportedWebAssembly = () => {
+            try {
+                return typeof WebAssembly === "object" &&
+                    typeof WebAssembly.Module === "function";
+            } catch (e) {
+                return false;
+            }
+        };
+
+        const isVersionAtLeast = (currentVersion, requiredVersion) => {
+            const current = currentVersion.split('.').map(Number);
+            const required = requiredVersion.split('.').map(Number);
+
+            for (let i = 0; i < Math.max(current.length, required.length); i++) {
+                const currentPart = current[i] || 0;
+                const requiredPart = required[i] || 0;
+
+                if (currentPart > requiredPart) return true;
+                if (currentPart < requiredPart) return false;
+            }
+            return true;
+        };
+
+        const loadComposeApp = () => {
             document.body.innerHTML = `
                 <div id="loading-screen">
                     <span class="loader"></span>
@@ -38,84 +56,53 @@
 
             window.addEventListener("ComposeReady", () => {
                 const loadingScreen = document.getElementById("loading-screen");
-                if (loadingScreen) {
-                    loadingScreen.style.display = "none";
-                }
+                if (loadingScreen) loadingScreen.style.display = "none";
             });
 
             const script = document.createElement("script");
             script.type = "application/javascript";
             script.src = "composeApp.js";
-
             document.head.appendChild(script);
+        };
 
+        const displayWarning = (title, message) => {
+            document.body.innerHTML = `
+                <div class="warning">
+                    <h1>${title}</h1>
+                    <p>${message}</p>
+                </div>
+            `;
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const iosVersion = getiOSVersion();
+            const safariVersion = getSafariVersion();
+
+            if (isIOS() && isSupportedWebAssembly()) {
+                if (iosVersion && isVersionAtLeast(iosVersion, "18.2")) {
+                    loadComposeApp();
+                } else {
+                    displayWarning("Unsupported iOS Version", "This app requires iOS 18.2+ for WebAssembly support. Please update your OS or use desktop Chrome for the best experience.");
+                }
+            } else if (isSafari() && isSupportedWebAssembly()) {
+                if (safariVersion && isVersionAtLeast(safariVersion, "18.2")) {
+                    loadComposeApp();
+                } else {
+                    displayWarning("Unsupported Browser", "This app requires Safari 18.2+ for WebAssembly support. Please update your browser or use desktop Chrome for the best experience.");
+                }
+            } else if (isSupportedWebAssembly()) {
+                loadComposeApp();
+            } else {
+                displayWarning("Unsupported Browser", "This app is not supported in your browser. Please use another browser.");
             }
 
-            // Apply styles for loading and Safari warning
-            const style = document.createElement("style");
-            style.innerHTML = `
-                /* Global Styles */
-                body {
-                    margin: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: black;
-                    color: white;
-                    font-family: Arial, sans-serif;
-                    text-align: center;
-                    overflow: hidden;
-                }
-
-                /* Loading Screen Styles */
-                #loading-screen {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .loader {
-                  width: 108px;
-                  height: 16px;
-                  background:
-                    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0),
-                    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0);
-                  background-size: 16px 16px;
-                  background-repeat: no-repeat;
-                  position: relative;
-                  animation: ballX 1s linear infinite;
-                }
-
-                .loader:before {
-                  content: "";
-                  position: absolute;
-                  width: 16px;
-                  height: 16px;
-                  border-radius: 50%;
-                  background:#FFF;
-                  inset:0;
-                  margin:auto;
-                  animation: moveX 1s cubic-bezier(0.5,300,0.5,-300) infinite;
-                }
-                @keyframes ballX {
-                  0%,25%,50%,75%, 100%  {background-position: 25% 0,75% 0}
-                  40%     {background-position: 25% 0,85% 0}
-                  90%     {background-position: 15% 0,75% 0}
-                }
-                @keyframes moveX {
-                  100% {transform:translate(0.15px)}
-                }
-
-
-                /* Safari Warning Styles */
-                .safari-warning {
-                    max-width: 600px;
-                    padding: 20px;
-                }
-            `;
-            document.head.appendChild(style);
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.type = "text/css";
+            link.href = "styles.css";
+            document.head.appendChild(link);
         });
+
     </script>
 </head>
 <body>
