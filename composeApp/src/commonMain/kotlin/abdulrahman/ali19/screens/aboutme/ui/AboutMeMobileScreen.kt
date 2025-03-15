@@ -5,12 +5,11 @@ import abdulrahman.ali19.screens.aboutme.ui.components.ContactUiItem
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.AboutViewModel
 import abdulrahman.ali19.screens.aboutme.ui.viewmodel.data.AboutEvents
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -35,72 +34,86 @@ import resume.composeapp.generated.resources.summary
 fun AboutMeMobileScreen(
     modifier: Modifier = Modifier
 ) {
-    val scrollState = rememberScrollState()
+
     val koin = getKoin()
     val viewmodel = remember { koin.get<AboutViewModel>() }
     val state by viewmodel.state.collectAsState()
-    Column(
+
+    LazyColumn(
         modifier = modifier
-            .fillMaxWidth()
-            .verticalScroll(scrollState),
+            .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
 
-        LoadImage(
-            modifier = Modifier
-                .size(400.dp)
-                .padding(bottom = 50.dp, top = 16.dp),
-            image = Res.getUri(state.personalInformationState.image),
-            contentDescription = stringResource(Res.string.summary),
-        )
-
-        Text(
-            text = state.personalInformationState.name,
-            style = MaterialTheme.typography.h4.copy(
-                color = Color.White
+        item {
+            LoadImage(
+                modifier = Modifier
+                    .size(400.dp)
+                    .padding(bottom = 50.dp, top = 16.dp),
+                image = Res.getUri(state.personalInformationState.image),
+                contentDescription = stringResource(Res.string.summary),
             )
-        )
+        }
 
-        Text(
-            text = state.personalInformationState.title,
-            style = MaterialTheme.typography.h5.copy(
-                color = Color.White
+        item {
+            Text(
+                text = state.personalInformationState.name,
+                style = MaterialTheme.typography.h4.copy(
+                    color = Color.White
+                )
             )
-        )
+        }
 
-        Text(
-            text = stringResource(Res.string.summary),
-            modifier = Modifier.fillMaxWidth(),
-            style = MaterialTheme.typography.h5.copy(
-                color = Color.White
+        item {
+
+            Text(
+                text = state.personalInformationState.title,
+                style = MaterialTheme.typography.h5.copy(
+                    color = Color.White
+                )
             )
-        )
+        }
 
-        Text(
-            text = state.personalInformationState.summary,
-            style = MaterialTheme.typography.body1.copy(
-                fontWeight = FontWeight.Light,
-                color = Color.White
+        item {
+            Text(
+                text = stringResource(Res.string.summary),
+                modifier = Modifier.fillMaxWidth(),
+                style = MaterialTheme.typography.h5.copy(
+                    color = Color.White
+                )
             )
-        )
+        }
 
-
-        Text(
-            text = stringResource(Res.string.contact),
-            modifier = Modifier
-                .padding(top = 14.dp)
-                .fillMaxWidth(),
-            style = MaterialTheme.typography.h5.copy(
-                color = Color.White
+        item {
+            Text(
+                text = state.personalInformationState.summary,
+                style = MaterialTheme.typography.body1.copy(
+                    fontWeight = FontWeight.Light,
+                    color = Color.White
+                )
             )
-        )
+        }
 
-        state.contacts.forEach {
+        item {
+            Text(
+                text = stringResource(Res.string.contact),
+                modifier = Modifier
+                    .padding(top = 14.dp)
+                    .fillMaxWidth(),
+                style = MaterialTheme.typography.h5.copy(
+                    color = Color.White
+                )
+            )
+        }
+
+        items(state.contacts) {
             ContactUiItem(
                 item = it,
                 onCopyClick = { uri -> viewmodel.sendEvent(AboutEvents.CopyClickEvent(uri)) },
-                onContactClick = { item -> viewmodel.sendEvent(AboutEvents.ContactClickEvent(item)) }
+                onContactClick = { item ->
+                    viewmodel.sendEvent(AboutEvents.ContactClickEvent(item))
+                }
             )
         }
 
