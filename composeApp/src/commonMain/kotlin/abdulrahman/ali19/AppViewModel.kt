@@ -14,6 +14,10 @@ class AppViewModel : BaseViewModel<AppState, AppEvents>(AppState(isMobile = true
                     verticalPadding = if (!event.isMobile) 60 else 7,
                 )
             }
+
+            is AppEvents.SelectTab -> _state.update {
+                it.copy(selectedTabIndex = event.index)
+            }
         }
     }
 
@@ -22,9 +26,11 @@ class AppViewModel : BaseViewModel<AppState, AppEvents>(AppState(isMobile = true
 data class AppState(
     val isMobile: Boolean,
     val horizontalPadding: Int = if (!isMobile) 120 else 16,
-    val verticalPadding: Int = if (!isMobile) 60 else 7
+    val verticalPadding: Int = if (!isMobile) 60 else 7,
+    val selectedTabIndex: Int = 0
 )
 
 sealed class AppEvents {
     data class UpdateViewPort(val isMobile: Boolean) : AppEvents()
+    data class SelectTab(val index: Int) : AppEvents()
 }

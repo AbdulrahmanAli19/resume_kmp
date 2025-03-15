@@ -17,7 +17,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -31,8 +30,8 @@ import androidx.compose.material.Tab
 import androidx.compose.material.TabRow
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -67,10 +66,17 @@ internal fun App() {
         pcLayout = { viewmodel.sendEvent(AppEvents.UpdateViewPort(isMobile = false)) }
     )
 
-    val scope = rememberCoroutineScope()
-    val pagerState = rememberPagerState(pageCount = { Tabs.entries.size })
-    val selectedTabIndex = remember { derivedStateOf { pagerState.currentPage } }
     val state by viewmodel.state.collectAsState()
+
+    val scope = rememberCoroutineScope()
+    val pagerState = rememberPagerState(
+        initialPage = state.selectedTabIndex,
+        pageCount = { Tabs.entries.size }
+    )
+
+    LaunchedEffect(pagerState.currentPage) {
+        viewmodel.sendEvent(AppEvents.SelectTab(pagerState.currentPage))
+    }
 
     AppTheme {
         Scaffold {
@@ -84,7 +90,7 @@ internal fun App() {
             ) {
 
                 MyTabRow(
-                    selectedTabIndex = selectedTabIndex.value,
+                    selectedTabIndex = state.selectedTabIndex,
                     isMobile = state.isMobile,
                     onRowClick = {
                         scope.launch {
@@ -95,22 +101,54 @@ internal fun App() {
 
                 HorizontalPager(
                     state = pagerState,
-                    userScrollEnabled = false,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .fillMaxHeight()
-                        .weight(1f)
-                        .padding(
-                            horizontal = state.horizontalPadding.dp,
-                            vertical = state.verticalPadding.dp
-                        ),
+                        .weight(1f),
                     verticalAlignment = Alignment.Top
-                ) {
-                    when (Tabs.entries[selectedTabIndex.value]) {
-                        Tabs.AboutMe -> if (state.isMobile) AboutMeMobileScreen() else AboutMeScreen()
-                        Tabs.Skills -> SkillsScreen(isMobile = state.isMobile)
-                        Tabs.Experience -> if (state.isMobile) ExperienceMobileScreen() else ExperienceScreen()
-                        Tabs.Education -> if (state.isMobile) EducationMobileScreen() else EducationScreen()
+                ) {page->
+                    when (Tabs.entries[page]) {
+                        Tabs.AboutMe -> if (state.isMobile) AboutMeMobileScreen(
+                            modifier = Modifier.padding(
+                                horizontal = state.horizontalPadding.dp,
+                                vertical = state.verticalPadding.dp
+                            )
+                        ) else AboutMeScreen(
+                            modifier = Modifier.padding(
+                                horizontal = state.horizontalPadding.dp,
+                                vertical = state.verticalPadding.dp
+                            )
+                        )
+
+                        Tabs.Skills -> SkillsScreen(
+                            isMobile = state.isMobile, modifier = Modifier.padding(
+                                horizontal = state.horizontalPadding.dp,
+                                vertical = state.verticalPadding.dp
+                            )
+                        )
+
+                        Tabs.Experience -> if (state.isMobile) ExperienceMobileScreen(
+                            modifier = Modifier.padding(
+                                horizontal = state.horizontalPadding.dp,
+                                vertical = state.verticalPadding.dp
+                            )
+                        ) else ExperienceScreen(
+                            modifier = Modifier.padding(
+                                horizontal = state.horizontalPadding.dp,
+                                vertical = state.verticalPadding.dp
+                            )
+                        )
+
+                        Tabs.Education -> if (state.isMobile) EducationMobileScreen(
+                            modifier = Modifier.padding(
+                                horizontal = state.horizontalPadding.dp,
+                                vertical = state.verticalPadding.dp
+                            )
+                        ) else EducationScreen(
+                            modifier = Modifier.padding(
+                                horizontal = state.horizontalPadding.dp,
+                                vertical = state.verticalPadding.dp
+                            )
+                        )
                     }
                 }
             }
