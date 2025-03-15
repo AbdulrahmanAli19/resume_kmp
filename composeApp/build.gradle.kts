@@ -59,12 +59,6 @@ kotlin {
             implementation(libs.koin.androidx.compose)
         }
 
-        jsMain.dependencies {
-            implementation(libs.web.core.js)
-            implementation(libs.kotlinx.html.js)
-            implementation(compose.html.core)
-        }
-
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
