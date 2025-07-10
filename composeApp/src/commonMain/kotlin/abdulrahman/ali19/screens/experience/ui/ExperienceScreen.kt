@@ -20,6 +20,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Icon
@@ -51,10 +54,10 @@ fun ExperienceScreen(
     val viewmodel = remember { koin.get<ExperienceViewModel>() }
     val state by viewmodel.state.collectAsState()
 
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
+    LazyVerticalStaggeredGrid(
+        columns = StaggeredGridCells.Fixed(2),
         modifier = modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
+        verticalItemSpacing = 12.dp,
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(state.list) {
