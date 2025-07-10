@@ -1,7 +1,6 @@
 package abdulrahman.ali19.screens.aboutme.ui.viewmodel.data
 
 import abdulrahman.ali19.screens.aboutme.domain.model.ContactInformationType
-import org.jetbrains.compose.resources.DrawableResource
 
 data class AboutScreenState(
     val personalInformationState: PersonalInformationState = PersonalInformationState(),
@@ -13,7 +12,7 @@ data class ContactsState(
     val type: ContactInformationType = ContactInformationType.NON,
     val value: String = "",
     val url: String = "",
-    val icon: DrawableResource? = null,
+    val icon: String = "",
     val isCopyable: Boolean = false,
     val isClickable: Boolean = false
 )

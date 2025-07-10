@@ -1,5 +1,6 @@
 package abdulrahman.ali19.screens.skills.ui
 
+import abdulrahman.ali19.core.ui.LoadImage
 import abdulrahman.ali19.screens.skills.ui.viewmodel.SkillsItemState
 import abdulrahman.ali19.screens.skills.ui.viewmodel.SkillsViewModel
 import androidx.compose.foundation.Image
@@ -17,11 +18,8 @@ import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Warning
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -34,9 +32,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.jetbrains.compose.resources.DrawableResource
+import io.github.aakira.napier.LogLevel
+import io.github.aakira.napier.Napier
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.getKoin
 import resume.composeapp.generated.resources.Res
@@ -112,11 +110,11 @@ fun TechnicalSkillItem(it: SkillsItemState) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
 
-        Column(
+        Column  (
             horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+        ){
             AsyncIcon(
-                image = it.icon,
+                image = it.iconPath,
                 contentDescription = it.name,
             )
             Text(
@@ -130,6 +128,7 @@ fun TechnicalSkillItem(it: SkillsItemState) {
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
+
 
 
             Column(
@@ -179,28 +178,29 @@ fun SkillTextItem(
 @Composable
 private fun AsyncIcon(
     modifier: Modifier = Modifier,
-    image: DrawableResource?,
+    image: String,
     contentDescription: String
 ) {
-
     Box(
         modifier = modifier
             .size(50.dp)
             .padding(10.dp)
     ) {
-        if (image != null) {
-            Image(
-                painter = painterResource(image),
-                contentDescription = contentDescription,
-                modifier = Modifier.fillMaxSize()
-            )
-        } else {
-            Icon(
-                modifier = Modifier.fillMaxSize(),
-                imageVector = Icons.Filled.Warning,
-                contentDescription = null,
-                tint = Color.Gray
-            )
-        }
+        LoadImage(
+            modifier = Modifier.fillMaxSize(),
+            image = Res.getUri(image),
+            contentDescription = contentDescription,
+            success = {
+                Napier.log(
+                    tag = "WTF",
+                    message = "image loaded",
+                    priority = LogLevel.INFO
+                )
+                Image(
+                    painter = it.painter,
+                    contentDescription = contentDescription
+                )
+            }
+        )
     }
 }

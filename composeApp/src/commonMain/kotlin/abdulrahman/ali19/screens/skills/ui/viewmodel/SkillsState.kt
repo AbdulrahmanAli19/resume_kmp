@@ -1,7 +1,5 @@
 package abdulrahman.ali19.screens.skills.ui.viewmodel
 
-import org.jetbrains.compose.resources.DrawableResource
-
 data class SkillsState(
     val technicalSkills: List<SkillsItemState> = emptyList(),
     val softwareEngineering: List<String> = emptyList(),
@@ -9,7 +7,7 @@ data class SkillsState(
 )
 
 data class SkillsItemState(
-    val icon: DrawableResource?,
+    val iconPath: String,
     val name: String,
     val skills: List<String> = emptyList(),
 )
