@@ -13,6 +13,7 @@ fun ExperienceEntity.toState(): List<ExperienceItemState> {
             startDate = it.startDate.plus(" - "),
             endDate = it.endDate ?: "",
             info = it.info ?: "",
+            isInfoVisible = it.info.isNullOrBlank().not(),
             responsibilities = it.responsibilities?.map { item -> "- $item" } ?: emptyList(),
             projects = it.projects?.map { projectEntity: ProjectEntity ->
                 ProjectState(
