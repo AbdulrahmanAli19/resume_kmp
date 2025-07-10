@@ -1,16 +1,37 @@
 {
   "experience": [
     {
+      "title": "Software Engineer I",
+      "company": "Breadfast",
+      "start_date": "May 2025",
+      "end_date": "Current",
+      "info": "",
+      "responsibilities": [
+        "Converted core modules to shared KMP libraries, reducing duplicate code by 40%.",
+        "Delivered new UI flows using Jetpack Compose, increasing delivery flow stability.",
+        "Wrote and maintained unit tests for critical features, improving code reliability and catching regressions early.",
+        "Analyzed legacy code to identify architectural bottlenecks and proposed improvements aligned with clean architecture.",
+        "Contributed to team knowledge sharing by documenting common pain points and debugging patterns in the codebase."
+      ],
+      "projects": [
+        {
+          "name": "Breadfast",
+          "url": "https://play.google.com/store/apps/details?id=com.breadfast",
+          "icon": "https://play-lh.googleusercontent.com/QgDzKYhOYXAFYR2fbSgAd-xPZDNi1UNbKtQIo2Ou1Z5dmZPJa-wZX7NBUZebz4kcKyQ=s96"
+        }
+      ]
+    },
+    {
       "title": "Software Engineer",
       "company": "Fawry",
       "start_date": "December 2023",
-      "end_date": "Current",
+      "end_date": "May 2025",
       "info": "As an Associate Software Engineer at Fawry since December 2023, I contribute to an application supporting 16 banks across Egypt. My role involves identifying and resolving production issues, refactoring code for performance optimization, and addressing security vulnerabilities using tools like DexGuard. I also develop and implement new features to meet business needs while ensuring application reliability and scalability using Java and Kotlin.",
       "responsibilities": [
         "Contributing to an application supporting 16 banks across Egypt.",
-        "Identify, analyze, and resolve software issues in production",
+        "Resolved 12+ production issues across 16 bank apps, reducing crash rates by 30%.",
         "Refactor code, and optimize Performance.",
-        "Address security vulnerabilities using tools like DexGuard.",
+        "Address security vulnerabilities using tools like DexGuard and RASP.",
         "Develop and implement new features to meet business requirements.",
         "Ensure application reliability and scalability using Java and Kotlin."
       ],
@@ -39,8 +60,8 @@
       "end_date": "December 2023",
       "info": "Worked on debugging, upgrading, and enhancing existing apps, while implementing new features to meet business needs. Wrote clean, efficient code, collaborated with teams to align development with requirements, and developed custom UI components and animations for an improved user experience.",
       "responsibilities": [
-        "Troubleshoot, debug and upgrade existing software.",
-        "Adding new features to existing software.",
+        "Shipped 10+ feature updates across 3 production Android apps, improving load time and navigation UX.",
+        "Reduced bug reports by 25% through targeted debugging and code refactoring.",
         "Produce clean, efficient code based on specifications.",
         "Collaborating with other developers and stakeholders to ensure the app meets business requirements.",
         "Develop custom UI components and animations for a smooth user experience"
