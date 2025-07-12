@@ -9,10 +9,8 @@ data class ExperienceItemState(
     val company: String,
     val startDate: String,
     val endDate: String,
-    val info: String,
     val responsibilities: List<String>,
     val projects: List<ProjectState>,
-    val isInfoVisible: Boolean
 )
 
 data class ProjectState(

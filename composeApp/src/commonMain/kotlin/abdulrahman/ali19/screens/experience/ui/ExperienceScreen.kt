@@ -156,16 +156,6 @@ internal fun ExperienceHeader(
             )
         }
 
-        if (state.isInfoVisible)
-            Text(
-                modifier = Modifier.padding(vertical = 16.dp, horizontal = 6.dp),
-                text = state.info,
-                style = MaterialTheme.typography.body1.copy(
-                    color = Color.White,
-                    fontWeight = FontWeight.Light
-                )
-            )
-
     }
 }
 

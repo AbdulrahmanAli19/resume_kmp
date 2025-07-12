@@ -9,7 +9,6 @@ data class ExperienceItemEntity(
     val company: String?,
     val startDate: String?,
     val endDate: String?,
-    val info: String?,
     val responsibilities: List<String>?,
     val projects: List<ProjectEntity>?
 )

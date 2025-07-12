@@ -13,7 +13,6 @@ fun ExperienceResponse.toEntity(): ExperienceEntity {
                 company = experienceItem.company,
                 startDate = experienceItem.startDate,
                 endDate = experienceItem.endDate,
-                info = experienceItem.info,
                 responsibilities = experienceItem.responsibilities,
                 projects = experienceItem.projects?.map { projectItemResponse ->
                     ProjectEntity(

@@ -5,7 +5,6 @@
       "company": "Breadfast",
       "start_date": "May 2025",
       "end_date": "Current",
-      "info": "",
       "responsibilities": [
         "Converted core modules to shared KMP libraries, reducing duplicate code by 40%.",
         "Delivered new UI flows using Jetpack Compose, increasing delivery flow stability.",
@@ -26,7 +25,6 @@
       "company": "Fawry",
       "start_date": "December 2023",
       "end_date": "May 2025",
-      "info": "As an Associate Software Engineer at Fawry since December 2023, I contribute to an application supporting 16 banks across Egypt. My role involves identifying and resolving production issues, refactoring code for performance optimization, and addressing security vulnerabilities using tools like DexGuard. I also develop and implement new features to meet business needs while ensuring application reliability and scalability using Java and Kotlin.",
       "responsibilities": [
         "Contributing to an application supporting 16 banks across Egypt.",
         "Resolved 12+ production issues across 16 bank apps, reducing crash rates by 30%.",
@@ -58,7 +56,6 @@
       "company": "Quantum Promoting Network",
       "start_date": "November 2022",
       "end_date": "December 2023",
-      "info": "Worked on debugging, upgrading, and enhancing existing apps, while implementing new features to meet business needs. Wrote clean, efficient code, collaborated with teams to align development with requirements, and developed custom UI components and animations for an improved user experience.",
       "responsibilities": [
         "Shipped 10+ feature updates across 3 production Android apps, improving load time and navigation UX.",
         "Reduced bug reports by 25% through targeted debugging and code refactoring.",
