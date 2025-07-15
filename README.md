@@ -1,21 +1,41 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web.
+# 📄 Kotlin Multiplatform Resume (CMP Project)
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+A responsive resume built using **JetBrains Compose Multiplatform** and hosted via **GitHub Pages**.
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+🔗 **Live Demo**: [Click here to view](https://abdulrahmanali19.github.io/resume_kmp/)
 
+---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+## ✨ Features
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
+- ✅ Built with JetBrains Compose for Web
+- ✅ Responsive layout (About, Experience, Education, Skills)
+- ✅ Clean design using Material theme
+- ✅ Hosted on GitHub Pages
 
-You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+---
+
+## 📷 Screenshots
+
+| About Me | Experience | Education | Skills |
+|---------|------------|-----------|--------|
+| ![](https://github.com/user-attachments/assets/f3005e7d-a12e-42b6-8e3d-ed3325c72b19) | ![](https://github.com/user-attachments/assets/0d0c1ff3-df25-4947-9b29-c6a3f7ddbe18) | ![](https://github.com/user-attachments/assets/af6a4c68-2b1d-4bbf-aa7c-c588e2135186) | ![](https://github.com/user-attachments/assets/783bb37b-43bc-4a3c-8b73-51c606789b78) |
+
+> 💡 Screenshots are placed in a grid for a quick visual overview.
+
+---
+
+## 🧠 Tech Stack
+
+- Kotlin Multiplatform
+- JetBrains Compose Web
+- GitHub Pages (for deployment)
+
+---
+
+## 🛠 How to Run Locally
+
+```bash
+git clone https://github.com/abdulrahmanali19/resume_kmp.git
+cd resume_kmp
+./gradlew wasmJsBrowserDevelopmentRun
