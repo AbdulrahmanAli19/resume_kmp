@@ -32,7 +32,7 @@ kotlin {
     
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
-        moduleName = "composeApp"
+        outputModuleName = "composeApp"
         browser {
             val rootDirPath = project.rootDir.path
             val projectDirPath = project.projectDir.path
@@ -79,7 +79,7 @@ kotlin {
             implementation(libs.koin.compose)
             implementation(libs.koin.composeVM)
             implementation(libs.ktor.serialization.kotlinx.json)
-
+            implementation("org.jetbrains.compose.material:material-icons-core:1.7.3")
         }
 
         appleMain.dependencies {
