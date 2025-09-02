@@ -10,6 +10,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import org.jetbrains.compose.resources.Font
 import resume.composeapp.generated.resources.Res
+import resume.composeapp.generated.resources.joy_pixels
 import resume.composeapp.generated.resources.notosans_black
 import resume.composeapp.generated.resources.notosans_bold
 import resume.composeapp.generated.resources.notosans_extrabold
@@ -39,7 +40,7 @@ private val darkColorScheme = Colors(
 @Composable
 fun AppTheme(
     color: Colors = darkColorScheme,
-    typography: Typography = Typography(defaultFontFamily = TekoFontFamily()) /*MaterialTheme.typography*/,
+    typography: Typography = Typography(defaultFontFamily = tekoFontFamily()) /*MaterialTheme.typography*/,
     shapes: Shapes = MaterialTheme.shapes,
     content: @Composable () -> Unit
 ) {
@@ -52,7 +53,7 @@ fun AppTheme(
 }
 
 @Composable
-fun TekoFontFamily() = FontFamily(
+fun tekoFontFamily() = FontFamily(
     Font(Res.font.notosans_thin, weight = FontWeight.W100),
     Font(Res.font.notosans_extralight, weight = FontWeight.W200),
     Font(Res.font.notosans_light, weight = FontWeight.W300),
@@ -63,3 +64,6 @@ fun TekoFontFamily() = FontFamily(
     Font(Res.font.notosans_extrabold, weight = FontWeight.W800),
     Font(Res.font.notosans_black, weight = FontWeight.W900)
 )
+
+@Composable
+fun joyPixelsFontFamily() = FontFamily(Font(Res.font.joy_pixels))
