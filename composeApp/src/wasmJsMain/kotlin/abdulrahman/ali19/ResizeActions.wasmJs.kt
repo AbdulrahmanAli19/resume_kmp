@@ -1,5 +1,6 @@
 package abdulrahman.ali19
 
+import abdulrahman.ali19.core.ui.shader.Shader
 import kotlinx.browser.document
 import kotlinx.browser.window
 import org.w3c.dom.HTMLMetaElement
@@ -9,14 +10,14 @@ actual fun onResizeLayoutChanged(
     mobileLayout: () -> Unit,
     pcLayout: () -> Unit
 ) {
-    window.addEventListener("resize", {
+    window.addEventListener("resize") {
         val isMobile = window.innerWidth <= 768
         if (isMobile) {
             mobileLayout()
         } else {
             pcLayout()
         }
-    })
+    }
 }
 
 actual fun adjustLayout(
@@ -67,6 +68,4 @@ actual fun setupViewport() {
     document.head?.appendChild(meta)
 }
 
-
-
-
+internal actual fun buildEffect(shader: Shader): RuntimeEffect = WasmJsRuntimeEffect(shader)
