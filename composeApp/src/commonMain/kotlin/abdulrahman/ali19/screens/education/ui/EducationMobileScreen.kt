@@ -15,23 +15,21 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.getKoin
 import resume.composeapp.generated.resources.Res
 import resume.composeapp.generated.resources.activities
 import resume.composeapp.generated.resources.courses
 import resume.composeapp.generated.resources.projects
 
 @Composable
-fun EducationMobileScreen(
+fun EducationMobileContent(
+    viewmodel: EducationViewmodel,
     modifier: Modifier = Modifier
 ) {
-    val koin = getKoin()
-    val viewmodel = remember { koin.get<EducationViewmodel>() }
+
     val state by viewmodel.state.collectAsState()
     LazyColumn(
         modifier = modifier.fillMaxWidth(),

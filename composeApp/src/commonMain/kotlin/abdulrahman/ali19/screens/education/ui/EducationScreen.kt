@@ -45,10 +45,22 @@ import resume.composeapp.generated.resources.responsibilities
 
 @Composable
 fun EducationScreen(
+    isMobile: Boolean,
     modifier: Modifier = Modifier,
 ) {
+
     val koin = getKoin()
     val viewmodel = remember { koin.get<EducationViewmodel>() }
+
+    if (isMobile) EducationMobileContent(viewmodel = viewmodel, modifier = modifier)
+    else EducationContent(viewmodel = viewmodel, modifier = modifier)
+}
+
+@Composable
+fun EducationContent(
+    viewmodel: EducationViewmodel,
+    modifier: Modifier = Modifier,
+) {
     val state by viewmodel.state.collectAsState()
     LazyVerticalGrid(
         modifier = modifier

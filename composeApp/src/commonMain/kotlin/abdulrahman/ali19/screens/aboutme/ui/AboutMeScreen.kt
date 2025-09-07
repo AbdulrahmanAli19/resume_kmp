@@ -48,10 +48,23 @@ import resume.composeapp.generated.resources.summary
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun AboutMeScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isMobile: Boolean
 ) {
     val koin = getKoin()
     val viewmodel = remember { koin.get<AboutViewModel>() }
+
+    if (isMobile) AboutMeMobileContent(modifier = modifier, viewmodel = viewmodel)
+    else AboutMeScreenContent(modifier = modifier, viewmodel = viewmodel)
+
+}
+
+@Composable
+fun AboutMeScreenContent(
+    viewmodel: AboutViewModel,
+    modifier: Modifier = Modifier,
+) {
+
     val state by viewmodel.state.collectAsState()
 
     Row(

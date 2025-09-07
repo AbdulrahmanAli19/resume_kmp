@@ -2,11 +2,8 @@ package abdulrahman.ali19
 
 import abdulrahman.ali19.core.ui.AppTheme
 import abdulrahman.ali19.core.ui.tabrow.ResumeTabRow
-import abdulrahman.ali19.screens.aboutme.ui.AboutMeMobileScreen
 import abdulrahman.ali19.screens.aboutme.ui.AboutMeScreen
-import abdulrahman.ali19.screens.education.ui.EducationMobileScreen
 import abdulrahman.ali19.screens.education.ui.EducationScreen
-import abdulrahman.ali19.screens.experience.ui.ExperienceMobileScreen
 import abdulrahman.ali19.screens.experience.ui.ExperienceScreen
 import abdulrahman.ali19.screens.skills.ui.SkillsScreen
 import abdulrahman.ali19.screens.welcome.ui.WelcomeScreen
@@ -87,12 +84,8 @@ internal fun App() {
                     modifier = Modifier.fillMaxWidth(),
                 ) { page ->
                     when (Tabs.entries[page]) {
-                        Tabs.AboutMe -> if (state.isMobile) AboutMeMobileScreen(
-                            modifier = Modifier.padding(
-                                horizontal = state.horizontalPadding.dp,
-                                vertical = state.verticalPadding.dp
-                            )
-                        ) else AboutMeScreen(
+                        Tabs.AboutMe -> AboutMeScreen(
+                            isMobile = state.isMobile,
                             modifier = Modifier.padding(
                                 horizontal = state.horizontalPadding.dp,
                                 vertical = state.verticalPadding.dp
@@ -106,24 +99,16 @@ internal fun App() {
                             )
                         )
 
-                        Tabs.Experience -> if (state.isMobile) ExperienceMobileScreen(
-                            modifier = Modifier.padding(
-                                horizontal = state.horizontalPadding.dp,
-                                vertical = state.verticalPadding.dp
-                            )
-                        ) else ExperienceScreen(
+                        Tabs.Experience -> ExperienceScreen(
+                            isMobile = state.isMobile,
                             modifier = Modifier.padding(
                                 horizontal = state.horizontalPadding.dp,
                                 vertical = state.verticalPadding.dp
                             )
                         )
 
-                        Tabs.Education -> if (state.isMobile) EducationMobileScreen(
-                            modifier = Modifier.padding(
-                                horizontal = state.horizontalPadding.dp,
-                                vertical = state.verticalPadding.dp
-                            )
-                        ) else EducationScreen(
+                        Tabs.Education -> EducationScreen(
+                            isMobile = state.isMobile,
                             modifier = Modifier.padding(
                                 horizontal = state.horizontalPadding.dp,
                                 vertical = state.verticalPadding.dp

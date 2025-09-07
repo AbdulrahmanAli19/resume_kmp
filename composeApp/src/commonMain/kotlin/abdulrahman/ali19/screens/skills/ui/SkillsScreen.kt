@@ -2,6 +2,7 @@ package abdulrahman.ali19.screens.skills.ui
 
 import abdulrahman.ali19.core.ui.LoadImage
 import abdulrahman.ali19.screens.skills.ui.viewmodel.SkillsItemState
+import abdulrahman.ali19.screens.skills.ui.viewmodel.SkillsState
 import abdulrahman.ali19.screens.skills.ui.viewmodel.SkillsViewModel
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -53,6 +54,19 @@ fun SkillsScreen(
     val viewmodel = remember { koin.get<SkillsViewModel>() }
     val state by viewmodel.state.collectAsState()
 
+    SkillsScreenContent(
+        modifier = modifier,
+        state = state,
+        isMobile = isMobile
+    )
+}
+
+@Composable
+fun SkillsScreenContent(
+    modifier: Modifier = Modifier,
+    state: SkillsState,
+    isMobile: Boolean
+) {
     LazyVerticalGrid(
         modifier = modifier
             .fillMaxWidth(),
@@ -96,8 +110,6 @@ fun SkillsScreen(
             SkillTextItem(text = it)
         }
     }
-
-
 }
 
 @Composable
@@ -110,9 +122,9 @@ fun TechnicalSkillItem(it: SkillsItemState) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
 
-        Column  (
+        Column(
             horizontalAlignment = Alignment.CenterHorizontally
-        ){
+        ) {
             AsyncIcon(
                 image = it.iconPath,
                 contentDescription = it.name,
@@ -128,7 +140,6 @@ fun TechnicalSkillItem(it: SkillsItemState) {
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
-
 
 
             Column(

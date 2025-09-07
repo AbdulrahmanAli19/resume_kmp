@@ -45,12 +45,23 @@ import resume.composeapp.generated.resources.responsibilities
 
 @Composable
 fun ExperienceScreen(
+    isMobile: Boolean,
     modifier: Modifier = Modifier
 ) {
     val koin = getKoin()
     val viewmodel = remember { koin.get<ExperienceViewModel>() }
-    val state by viewmodel.state.collectAsState()
 
+    if (isMobile) ExperienceMobileContent(viewmodel = viewmodel)
+    else ExperienceContent(viewmodel = viewmodel, modifier = modifier)
+
+}
+
+@Composable
+fun ExperienceContent(
+    viewmodel: ExperienceViewModel,
+    modifier: Modifier = Modifier
+) {
+    val state by viewmodel.state.collectAsState()
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Fixed(2),
         modifier = modifier.fillMaxWidth(),

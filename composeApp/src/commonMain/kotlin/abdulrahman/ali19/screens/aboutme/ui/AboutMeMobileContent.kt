@@ -15,7 +15,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,7 +22,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.getKoin
 import resume.composeapp.generated.resources.Res
 import resume.composeapp.generated.resources.contact
 import resume.composeapp.generated.resources.summary
@@ -31,12 +29,11 @@ import resume.composeapp.generated.resources.summary
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-fun AboutMeMobileScreen(
+fun AboutMeMobileContent(
+    viewmodel: AboutViewModel,
     modifier: Modifier = Modifier
 ) {
 
-    val koin = getKoin()
-    val viewmodel = remember { koin.get<AboutViewModel>() }
     val state by viewmodel.state.collectAsState()
 
     LazyColumn(
