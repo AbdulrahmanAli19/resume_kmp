@@ -1,8 +1,7 @@
 package abdulrahman.ali19
 
 import abdulrahman.ali19.core.ui.AppTheme
-import abdulrahman.ali19.core.ui.joyPixelsFontFamily
-import abdulrahman.ali19.core.ui.tekoFontFamily
+import abdulrahman.ali19.core.ui.tabrow.ResumeTabRow
 import abdulrahman.ali19.screens.aboutme.ui.AboutMeMobileScreen
 import abdulrahman.ali19.screens.aboutme.ui.AboutMeScreen
 import abdulrahman.ali19.screens.education.ui.EducationMobileScreen
@@ -20,9 +19,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.VerticalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.Scaffold
-import androidx.compose.material.ScrollableTabRow
-import androidx.compose.material.Tab
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -31,7 +27,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
@@ -80,7 +75,7 @@ internal fun App() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                MyTabRow(
+                ResumeTabRow(
                     selectedTabIndex = state.selectedTabIndex,
                     onRowClick = { page ->
                         scope.launch { pagerState.animateScrollToPage(page) }
@@ -142,31 +137,4 @@ internal fun App() {
             DynamicGradientBackground()
         }
     }
-}
-
-@Composable
-fun MyTabRow(
-    selectedTabIndex: Int,
-    onRowClick: (Int) -> Unit,
-) {
-    ScrollableTabRow(
-        backgroundColor = Color.Transparent,
-        selectedTabIndex = selectedTabIndex,
-        divider = {},
-        edgePadding = 12.dp
-    ) {
-        Tabs.entries.forEachIndexed { index, currentTab ->
-            Tab(
-                selected = selectedTabIndex == index,
-                onClick = { onRowClick(currentTab.ordinal) },
-                text = {
-                    Text(
-                        text = currentTab.text,
-                        fontFamily = if (index == 0) joyPixelsFontFamily() else tekoFontFamily()
-                    )
-                }
-            )
-        }
-    }
-
 }
