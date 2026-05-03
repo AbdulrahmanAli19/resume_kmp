@@ -2,6 +2,7 @@ package abdulrahman.ali19.screens.welcome.ui
 
 import abdulrahman.ali19.core.ui.shader.shaderBackground
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,7 +17,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun WelcomeScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isMobile: Boolean
 ) = Box(
     modifier = modifier.fillMaxSize().shaderBackground(SpaceShader),
 ) {
@@ -27,23 +29,40 @@ fun WelcomeScreen(
         Box(
             modifier = Modifier.align(Alignment.Center)
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Text(
-                    "Hi, I'm",
-                    style = MaterialTheme.typography.h4.copy(
-                        color = Color.White
+            if (isMobile)
+                Column  {
+                    Text(
+                        "Hi, I'm",
+                        style = MaterialTheme.typography.h4.copy(
+                            color = Color.White
+                        )
                     )
-                )
-                Spacer(modifier = Modifier.width(10.dp))
-                Text(
-                    "Abdulrahman",
-                    style = MaterialTheme.typography.h2.copy(
-                        color = Color.White
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Text(
+                        "Abdulrahman",
+                        style = MaterialTheme.typography.h2.copy(
+                            color = Color.White
+                        )
                     )
-                )
-            }
+                }
+            else
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        "Hi, I'm",
+                        style = MaterialTheme.typography.h4.copy(
+                            color = Color.White
+                        )
+                    )
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Text(
+                        "Abdulrahman",
+                        style = MaterialTheme.typography.h2.copy(
+                            color = Color.White
+                        )
+                    )
+                }
         }
     }
 }

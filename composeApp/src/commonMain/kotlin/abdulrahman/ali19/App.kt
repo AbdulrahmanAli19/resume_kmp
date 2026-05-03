@@ -115,7 +115,7 @@ internal fun App() {
                             )
                         )
 
-                        Tabs.Welcome -> WelcomeScreen()
+                        Tabs.Welcome -> WelcomeScreen(isMobile = state.isMobile,)
                     }
                 }
             }
