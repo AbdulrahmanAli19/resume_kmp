@@ -21,10 +21,25 @@ data class PersonalInformationState(
     val name: String = "",
     val title: String = "",
     val summary: String = "",
+    val greeting: String = "",
+    val quote: String = "",
+    val techStackTitle: String = "",
+    val techStack: List<AboutTechStackItemState> = emptyList(),
+    val valueItems: List<AboutValueItemState> = emptyList(),
     val languages: List<String> = emptyList(),
     val image: String = ""
 )
 
+data class AboutTechStackItemState(
+    val icon: String = "",
+    val label: String = ""
+)
+
+data class AboutValueItemState(
+    val icon: String = "",
+    val title: String = "",
+    val description: String = ""
+)
 
 sealed class AboutEvents {
     data class ContactClickEvent(val item: ContactsState) : AboutEvents()

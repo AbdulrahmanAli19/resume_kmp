@@ -37,6 +37,29 @@ private val darkColorScheme = Colors(
     isLight = false
 )
 
+object ResumeColors {
+    val NeonPurple = Color(0xFFB12BFF)
+    val NeonPink = Color(0xFFB255FF)
+    val NeonBlue = Color(0xFF00B2FF)
+    val AccentBlue = Color(0xFF1DA1FF)
+    val AccentViolet = Color(0xFF7E6BFF)
+    val QuotePurple = Color(0xFF8A35FF)
+    val PanelBlueBorder = Color(0xFF123D9A)
+    val PanelPinkBorder = Color(0xFFC22BFF)
+    val PortraitBackground = Color(0xFF090D1B)
+    val ContactIconBackground = Color(0xFF1A0F3D)
+    val ValueIconBackground = Color(0xFF442084)
+    val PrimaryText = Color.White
+    val SecondaryText = Color(0xD9FFFFFF)
+    val MutedText = Color(0xCCFFFFFF)
+    val Divider = Color(0x33FFFFFF)
+    val ContactDivider = Color(0x1FFFFFFF)
+    val CopyIcon = Color(0xFFB8B7C8)
+    val PanelGradientStart = Color(0x66120A2E)
+    val PanelGradientCenter = Color(0x33232A55)
+    val PanelGradientEnd = Color(0x6614072B)
+}
+
 @Composable
 fun AppTheme(
     color: Colors = darkColorScheme,

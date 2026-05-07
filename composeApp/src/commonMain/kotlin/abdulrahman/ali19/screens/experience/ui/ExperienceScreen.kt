@@ -51,7 +51,7 @@ fun ExperienceScreen(
     val koin = getKoin()
     val viewmodel = remember { koin.get<ExperienceViewModel>() }
 
-    if (isMobile) ExperienceMobileContent(viewmodel = viewmodel)
+    if (isMobile) ExperienceMobileContent(viewmodel = viewmodel, modifier = modifier)
     else ExperienceContent(viewmodel = viewmodel, modifier = modifier)
 
 }

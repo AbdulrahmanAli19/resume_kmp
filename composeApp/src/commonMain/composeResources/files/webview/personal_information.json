@@ -1,8 +1,62 @@
 {
     "personal_information": {
         "name": "Abdulrahman Ali Muhmmed",
-        "title": "Software Engineer",
+        "title": "Senior Software Engineer",
         "summary": "Android Engineer with 3+ years of experience building scalable, high-performance mobile applications in fintech and e-commerce domains. Experienced in Kotlin, Jetpack Compose, and Kotlin Multiplatform (KMP), with a strong focus on clean architecture, modularization, and performance optimization. Proven ability to deliver production-ready features used by millions and solve complex engineering challenges across large-scale applications.",
+        "greeting": "Hello, I'm",
+        "quote": "Code is not just what I write,\nit's how I solve problems.",
+        "tech_stack_title": "</>  Tech Stack",
+        "tech_stack": [
+            {
+                "icon": "drawable/kotlin.svg",
+                "label": "Kotlin"
+            },
+            {
+                "icon": "drawable/android.svg",
+                "label": "Android"
+            },
+            {
+                "icon": "drawable/mobile.svg",
+                "label": "Jetpack\nCompose"
+            },
+            {
+                "icon": "drawable/technologies.svg",
+                "label": "Kotlin\nMultiplatform"
+            },
+            {
+                "icon": "drawable/firebase.svg",
+                "label": "Firebase"
+            },
+            {
+                "icon": "drawable/api.svg",
+                "label": "Retrofit"
+            },
+            {
+                "icon": "drawable/database.svg",
+                "label": "Room"
+            },
+            {
+                "icon": "drawable/bug.svg",
+                "label": "Dagger Hilt"
+            }
+        ],
+        "value_items": [
+            {
+                "icon": "drawable/mobile.svg",
+                "title": "Performance First",
+                "description": "Building fast, efficient and\nscalable mobile apps."
+            },
+            {
+                "icon": "drawable/maintenance.svg",
+                "title": "Clean Architecture",
+                "description": "Writing maintainable, testable\nand modular code."
+            },
+            {
+                "icon": "drawable/technologies.svg",
+                "title": "User Focused",
+                "description": "Creating seamless experiences\nthat users love."
+            }
+        ],
         "languages": [
             "Arabic (native)",
             "English"

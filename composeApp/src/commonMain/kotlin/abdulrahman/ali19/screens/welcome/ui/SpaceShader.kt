@@ -13,7 +13,6 @@ object SpaceShader : Shader {
  * Ether Shader (Centered & Slowed Down, Transparent Background)
  *  * SkSL conversion of a GLSL shader with transparency support
  */
-
 uniform float uTime;
 uniform vec3 uResolution;
 
@@ -51,11 +50,11 @@ vec4 main(vec2 fragCoord) {
         dist += min(rz, 1.0);
     }
 
-    // Compute brightness to determine transparency
-    float brightness = dot(finalColor, vec3(0.299, 0.587, 0.114));
+    float brightness = max(max(finalColor.r, finalColor.g), finalColor.b);
 
-    // If brightness is low, treat it as background and set alpha to 0
-    float alpha = brightness > 0.05 ? 1.0 : 0.0;
+    float alpha = smoothstep(0.08, 0.25, brightness);
+
+    finalColor *= alpha;
 
     return vec4(finalColor, alpha);
 }

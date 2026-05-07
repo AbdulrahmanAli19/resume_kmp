@@ -64,6 +64,7 @@ internal fun App() {
 
     AppTheme {
         Scaffold {
+            DynamicGradientBackground()
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -87,39 +88,34 @@ internal fun App() {
                         Tabs.AboutMe -> AboutMeScreen(
                             isMobile = state.isMobile,
                             modifier = Modifier.padding(
-                                horizontal = state.horizontalPadding.dp,
-                                vertical = state.verticalPadding.dp
+                                horizontal = state.horizontalPadding.dp
                             )
                         )
 
                         Tabs.Skills -> SkillsScreen(
                             isMobile = state.isMobile, modifier = Modifier.padding(
-                                horizontal = state.horizontalPadding.dp,
-                                vertical = state.verticalPadding.dp
+                                horizontal = state.horizontalPadding.dp
                             )
                         )
 
                         Tabs.Experience -> ExperienceScreen(
                             isMobile = state.isMobile,
                             modifier = Modifier.padding(
-                                horizontal = state.horizontalPadding.dp,
-                                vertical = state.verticalPadding.dp
+                                horizontal = state.horizontalPadding.dp
                             )
                         )
 
                         Tabs.Education -> EducationScreen(
                             isMobile = state.isMobile,
                             modifier = Modifier.padding(
-                                horizontal = state.horizontalPadding.dp,
-                                vertical = state.verticalPadding.dp
+                                horizontal = state.horizontalPadding.dp
                             )
                         )
 
-                        Tabs.Welcome -> WelcomeScreen(isMobile = state.isMobile,)
+                        Tabs.Welcome -> WelcomeScreen(isMobile = state.isMobile)
                     }
                 }
             }
-            DynamicGradientBackground()
         }
     }
 }
