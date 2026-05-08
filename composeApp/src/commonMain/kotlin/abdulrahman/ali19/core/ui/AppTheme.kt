@@ -55,6 +55,9 @@ object ResumeColors {
     val Divider = Color(0x33FFFFFF)
     val ContactDivider = Color(0x1FFFFFFF)
     val CopyIcon = Color(0xFFB8B7C8)
+    val SuccessGreen = Color(0xFF00D084)
+    val ProjectTileBackground = Color.White
+    val ProjectFallbackIcon = Color.Black
     val PanelGradientStart = Color(0x66120A2E)
     val PanelGradientCenter = Color(0x33232A55)
     val PanelGradientEnd = Color(0x6614072B)

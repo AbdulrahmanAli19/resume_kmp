@@ -7,8 +7,11 @@ import abdulrahman.ali19.screens.experience.domain.entity.ProjectEntity
 
 fun ExperienceResponse.toEntity(): ExperienceEntity {
     return ExperienceEntity(
+        screenTitle = screenTitle,
+        screenSubtitle = screenSubtitle,
         experience = list.map { experienceItem ->
             ExperienceItemEntity(
+                icon = experienceItem.icon,
                 title = experienceItem.title,
                 company = experienceItem.company,
                 startDate = experienceItem.startDate,

@@ -1,6 +1,9 @@
 {
+  "screen_title": "Experience",
+  "screen_subtitle": "My professional journey so far",
   "experience": [
     {
+      "icon": "drawable/fpt.jpeg",
       "title": "Senior Software Engineer",
       "company": "FPT",
       "start_date": "May 2026",
@@ -21,6 +24,7 @@
       ]
     },
     {
+      "icon": "drawable/breadfast.jpeg",
       "title": "Software Engineer I",
       "company": "Breadfast",
       "start_date": "May 2025",
@@ -41,6 +45,7 @@
       ]
     },
     {
+      "icon": "drawable/fawry.jpeg",
       "title": "Software Engineer",
       "company": "Fawry",
       "start_date": "December 2023",
@@ -72,6 +77,7 @@
       ]
     },
     {
+      "icon": "drawable/qbn.jpeg",
       "title": "Android Developer",
       "company": "Quantum Promoting Network",
       "start_date": "November 2022",

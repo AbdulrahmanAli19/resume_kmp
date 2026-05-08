@@ -1,14 +1,18 @@
 package abdulrahman.ali19.screens.experience.ui.viewmodel.model
 
 data class ExperienceState(
+    val screenTitle: String = "",
+    val screenSubtitle: String = "",
     val list: List<ExperienceItemState>
 )
 
 data class ExperienceItemState(
+    val icon: String,
     val title: String,
     val company: String,
     val startDate: String,
     val endDate: String,
+    val isCurrent: Boolean,
     val responsibilities: List<String>,
     val projects: List<ProjectState>,
 )

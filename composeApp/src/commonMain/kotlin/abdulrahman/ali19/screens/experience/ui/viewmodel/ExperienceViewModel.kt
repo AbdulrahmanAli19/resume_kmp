@@ -18,7 +18,7 @@ class ExperienceViewModel(
         viewModelScope.launch {
             val result = gatExperienceUseCase()
             _state.update {
-                it.copy(list = result.toState())
+                result.toState()
             }
         }
     }

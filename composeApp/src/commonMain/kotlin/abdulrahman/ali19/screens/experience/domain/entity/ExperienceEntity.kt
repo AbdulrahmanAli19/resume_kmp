@@ -1,10 +1,13 @@
 package abdulrahman.ali19.screens.experience.domain.entity
 
 data class ExperienceEntity (
+    val screenTitle: String? = null,
+    val screenSubtitle: String? = null,
     val experience: List<ExperienceItemEntity>? = null
 )
 
 data class ExperienceItemEntity(
+    val icon: String?,
     val title: String?,
     val company: String?,
     val startDate: String?,
