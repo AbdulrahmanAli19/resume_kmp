@@ -1,7 +1,9 @@
 package abdulrahman.ali19
 
 import abdulrahman.ali19.core.ui.AppTheme
+import abdulrahman.ali19.core.ui.shader.shaderBackground
 import abdulrahman.ali19.core.ui.tabrow.ResumeTabRow
+import abdulrahman.ali19.screens.PortfolioBackgroundShader
 import abdulrahman.ali19.screens.aboutme.ui.AboutMeScreen
 import abdulrahman.ali19.screens.education.ui.EducationScreen
 import abdulrahman.ali19.screens.experience.ui.ExperienceScreen
@@ -68,7 +70,8 @@ internal fun App() {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(top = it.calculateTopPadding()),
+                    .padding(top = it.calculateTopPadding())
+                    .shaderBackground(PortfolioBackgroundShader),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Top
             ) {
