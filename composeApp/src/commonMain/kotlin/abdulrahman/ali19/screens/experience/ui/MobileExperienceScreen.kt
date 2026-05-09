@@ -29,7 +29,11 @@ fun ExperienceMobileContent(
         verticalArrangement = Arrangement.spacedBy(18.dp),
     ) {
         item {
-            ExperienceScreenHeader(state = state, compact = true)
+            ExperienceScreenHeader(
+                title = state.screenTitle,
+                screenSubtitle = state.screenSubtitle,
+                compact = true
+            )
         }
 
         items(state.list) {

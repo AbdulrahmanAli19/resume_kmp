@@ -5,7 +5,6 @@ import abdulrahman.ali19.core.ui.ResumeColors
 import abdulrahman.ali19.screens.experience.ui.viewmodel.ExperienceViewModel
 import abdulrahman.ali19.screens.experience.ui.viewmodel.model.ExperienceEvents
 import abdulrahman.ali19.screens.experience.ui.viewmodel.model.ExperienceItemState
-import abdulrahman.ali19.screens.experience.ui.viewmodel.model.ExperienceState
 import abdulrahman.ali19.screens.experience.ui.viewmodel.model.ProjectState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -82,7 +81,10 @@ fun ExperienceContent(
         horizontalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         item(span = StaggeredGridItemSpan.FullLine) {
-            ExperienceScreenHeader(state = state)
+            ExperienceScreenHeader(
+                title = state.screenTitle,
+                screenSubtitle = state.screenSubtitle,
+            )
         }
 
         items(state.list) {
@@ -98,7 +100,8 @@ fun ExperienceContent(
 
 @Composable
 internal fun ExperienceScreenHeader(
-    state: ExperienceState,
+    title: String,
+    screenSubtitle: String,
     modifier: Modifier = Modifier,
     compact: Boolean = false
 ) {
@@ -107,13 +110,13 @@ internal fun ExperienceScreenHeader(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
-            text = state.screenTitle,
+            text = title,
             style = (if (compact) MaterialTheme.typography.h3 else MaterialTheme.typography.h2)
                 .experienceGradientTextStyle(fontWeight = FontWeight.Black)
         )
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                text = state.screenSubtitle,
+                text = screenSubtitle,
                 style = MaterialTheme.typography.body1.copy(color = ResumeColors.PrimaryText)
             )
             Spacer(modifier = Modifier.width(10.dp))

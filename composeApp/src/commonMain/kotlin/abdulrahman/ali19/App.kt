@@ -9,7 +9,6 @@ import abdulrahman.ali19.screens.education.ui.EducationScreen
 import abdulrahman.ali19.screens.experience.ui.ExperienceScreen
 import abdulrahman.ali19.screens.skills.ui.SkillsScreen
 import abdulrahman.ali19.screens.welcome.ui.WelcomeScreen
-import abdulrahman.ali19.uicomponents.DynamicGradientBackground
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -66,7 +65,6 @@ internal fun App() {
 
     AppTheme {
         Scaffold {
-            DynamicGradientBackground()
             Column(
                 modifier = Modifier
                     .fillMaxSize()
